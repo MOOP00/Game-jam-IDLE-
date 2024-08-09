@@ -1,19 +1,19 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class WeightedRandomList<T>
+public class WeightedRandomList
 {
     [System.Serializable]
     public struct Pair
     {
-        public T item;
+        public SO_Item itemData;
         public float weight;
 
-        public Pair(T item, float weight)
+        public Pair(float weight, SO_Item itemData)
         {
-            this.item = item;
             this.weight = weight;
+            this.itemData = itemData;
         }
     }
 
@@ -24,14 +24,13 @@ public class WeightedRandomList<T>
         get => list.Count;
     }
 
-    public void Add(T item, float weight)
+    public void Add(float weight, SO_Item itemData)
     {
-        list.Add(new Pair(item, weight));
+        list.Add(new Pair(weight, itemData));
     }
 
-    public T GetRandom()
+    public SO_Item GetRandom()
     {
-        Debug.Log("T");
         float totalWeight = 0;
 
         foreach (Pair p in list)
@@ -49,11 +48,10 @@ public class WeightedRandomList<T>
 
             if (sumWeight >= value)
             {
-                return p.item;
+                return p.itemData;
             }
         }
 
-        return default(T);
+        return null;
     }
 }
-
