@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class ShotgunBoss : Boss
 {
-    public int pelletsPerShot = 10;
-    public float spreadAngle = 30f;
+    public int pelletsPerShot = 9;
+    public float spreadAngle = 45f;
 
     protected override void Start()
     {
         base.Start();
         fireRate = 2f;
-        damage = 15;
+        damage = 20;
     }
 
     protected override void AttackPlayer()

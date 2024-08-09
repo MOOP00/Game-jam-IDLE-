@@ -2,11 +2,14 @@ using UnityEngine;
 
 public class LaserBoss : Boss
 {
+    public int pelletsPerShot = 20;
+    public float spreadAngle = 180f;
+
     protected override void Start()
     {
         base.Start();
-        fireRate = 1f;
-        damage = 15;
+        fireRate = 2f;
+        damage = 40;
     }
 
     protected override void AttackPlayer()
@@ -18,11 +21,24 @@ public class LaserBoss : Boss
     {
         if (bulletPrefab != null)
         {
-            GameObject laser = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            Rigidbody2D rb = laser.GetComponent<Rigidbody2D>();
-            rb.linearVelocity = (player.position - transform.position).normalized * bulletSpeed * damageMultiplier;
+            Vector2 baseDirection = (player.position - transform.position).normalized;
+            float baseAngle = Mathf.Atan2(baseDirection.y, baseDirection.x) * Mathf.Rad2Deg;
+            float angleStep = spreadAngle / (pelletsPerShot - 1);
+            float startAngle = baseAngle - spreadAngle / 2;
 
-            Destroy(laser, bulletLifetime);
+            for (int i = 0; i < pelletsPerShot; i++)
+            {
+                float currentAngle = startAngle + (angleStep * i);
+                float radianAngle = currentAngle * Mathf.Deg2Rad;
+
+                Vector2 direction = new Vector2(Mathf.Cos(radianAngle), Mathf.Sin(radianAngle));
+
+                GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+                Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+                rb.linearVelocity = direction * bulletSpeed * damageMultiplier;
+
+                Destroy(bullet, bulletLifetime);
+            }
         }
     }
 }
