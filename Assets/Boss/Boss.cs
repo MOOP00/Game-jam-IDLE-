@@ -9,10 +9,10 @@ public abstract class Boss : MonoBehaviour
     public float shootingRange = 60f;
     public GameObject bulletPrefab;
     public float bulletSpeed = 10f;
-    public float bulletLifetime = 20f;
+    public float bulletLifetime = 5f;
     public float fireRate = 3f; 
     public int health = 1000;
-    public float waveIncrementHealth = 500 * 2.5f;
+    public float waveIncrementHealth = 500 * 1.2f;
     public float damageMultiplier = 1.5f;
     public int damage = 10;
 
@@ -58,7 +58,7 @@ public abstract class Boss : MonoBehaviour
     {
         float additionalHealth = 500 * 2.5f * waveNumber;
         health += (int)additionalHealth; // Cast after calculation
-        damageMultiplier += waveNumber * 1.5f;
+        damageMultiplier += waveNumber * 5.5f;
     }
 
 

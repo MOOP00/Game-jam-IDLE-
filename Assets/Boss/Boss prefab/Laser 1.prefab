@@ -290,9 +290,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1406675281825354680}
   - component: {fileID: 8534291437125907830}
-  - component: {fileID: 5776881419541977765}
   - component: {fileID: -16802945304152633}
   - component: {fileID: 1081427377058037150}
+  - component: {fileID: -3193108625481846119}
   m_Layer: 0
   m_Name: Laser 1
   m_TagString: Enemy
@@ -371,33 +371,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5776881419541977765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6304130131624723926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4fdaec3d5592bf45ac09f6e281bc0d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  moveSpeed: 1
-  attackRange: 1
-  attackCooldown: 3
-  shootingRange: 40
-  bulletPrefab: {fileID: 4697591578116746395, guid: e6f8e10840c8e754aac5e9d1b7627eb7, type: 3}
-  bulletSpeed: 10
-  bulletLifetime: 10
-  fireRate: 3
-  health: 1000
-  waveIncrementHealth: 500
-  damageMultiplier: 1.5
-  damage: 10
-  pelletsPerShot: 10
-  spreadAngle: 180
 --- !u!61 &-16802945304152633
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -471,6 +444,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-3193108625481846119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6304130131624723926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4fdaec3d5592bf45ac09f6e281bc0d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  moveSpeed: 1
+  attackRange: 1
+  attackCooldown: 3
+  shootingRange: 60
+  bulletPrefab: {fileID: 4697591578116746395, guid: e6f8e10840c8e754aac5e9d1b7627eb7, type: 3}
+  bulletSpeed: 10
+  bulletLifetime: 2
+  fireRate: 3
+  health: 1000
+  waveIncrementHealth: 500
+  damageMultiplier: 1.5
+  damage: 10
+  pelletsPerShot: 20
+  spreadAngle: 180
 --- !u!1 &7915542509543169006
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,23 +1,37 @@
 using UnityEngine;
+using System.Collections;
+
 
 public class MinigunBoss : Boss
 {
-    public int bulletsPerBurst = 30;
+    public int bulletsPerBurst = 1;
+    public int maxBulletsBeforeCooldown = 150; // Maximum bullets before entering cooldown
+    public float cooldownDuration = 3f; // Cooldown duration in seconds
+
+    private int bulletsFired = 0; // Counter for bullets fired
+    private float lastShootTime; // Track when the last shot was fired
+    private bool isCoolingDown = false; // Track if the boss is in cooldown
 
     protected override void Start()
     {
         base.Start();
-        fireRate = 0.1f;
-        damage = 1
-           ;
+        fireRate = 0.05f;
+        damage = 2;
     }
 
     protected override void AttackPlayer()
     {
         Debug.Log("MinigunBoss attacks the player!");
     }
+
     protected override void ShootPlayer()
     {
+        if (isCoolingDown)
+        {
+            // If in cooldown, return without shooting
+            return;
+        }
+
         if (bulletPrefab != null)
         {
             for (int i = 0; i < bulletsPerBurst; i++)
@@ -28,6 +42,25 @@ public class MinigunBoss : Boss
 
                 Destroy(bullet, bulletLifetime);
             }
+
+            bulletsFired += bulletsPerBurst; // Update bullets fired counter
+
+            if (bulletsFired >= maxBulletsBeforeCooldown)
+            {
+                StartCoroutine(Cooldown()); // Start cooldown
+            }
         }
+    }
+
+    private IEnumerator Cooldown()
+    {
+        isCoolingDown = true;
+        Debug.Log("MinigunBoss is cooling down!");
+
+        yield return new WaitForSeconds(cooldownDuration); // Wait for cooldown duration
+
+        bulletsFired = 0; // Reset bullets fired counter
+        isCoolingDown = false; // Exit cooldown state
+        Debug.Log("MinigunBoss is ready to shoot again!");
     }
 }

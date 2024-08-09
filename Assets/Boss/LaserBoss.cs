@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class LaserBoss : Boss
 {
-    public int pelletsPerShot = 20;
+    public int pelletsPerShot = 10;
     public float spreadAngle = 180f;
 
     protected override void Start()
     {
         base.Start();
-        fireRate = 2f;
-        damage = 40;
+        fireRate = 1f;
+        damage = 10;
     }
 
     protected override void AttackPlayer()

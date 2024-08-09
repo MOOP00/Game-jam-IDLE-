@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class ShotgunBoss : Boss
 {
-    public int pelletsPerShot = 9;
-    public float spreadAngle = 45f;
+    public int pelletsPerShot = 15;
+    public float spreadAngle = 90f;
 
     protected override void Start()
     {
         base.Start();
-        fireRate = 2f;
-        damage = 20;
+        fireRate = 0.5f;
+        damage = 5;
     }
 
     protected override void AttackPlayer()
@@ -24,7 +24,7 @@ public class ShotgunBoss : Boss
             Vector2 baseDirection = (player.position - transform.position).normalized;
             float baseAngle = Mathf.Atan2(baseDirection.y, baseDirection.x) * Mathf.Rad2Deg;
             float angleStep = spreadAngle / (pelletsPerShot - 1);
-            float startAngle = baseAngle - spreadAngle / 2;
+            float startAngle = baseAngle - spreadAngle / 5;
 
             for (int i = 0; i < pelletsPerShot; i++)
             {

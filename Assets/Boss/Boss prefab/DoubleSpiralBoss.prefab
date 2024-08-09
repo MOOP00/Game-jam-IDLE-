@@ -112,11 +112,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2905181810006628557}
   - component: {fileID: 4882756371494940311}
-  - component: {fileID: 7310375604565790450}
   - component: {fileID: -65468641564669103}
   - component: {fileID: 5937605940713799155}
+  - component: {fileID: 1067941051456375449}
   m_Layer: 0
-  m_Name: Bombing 1
+  m_Name: DoubleSpiralBoss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,32 +193,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7310375604565790450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000362057270645552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8223eb31995496a489c16496cf4d7b5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  moveSpeed: 1
-  attackRange: 1
-  attackCooldown: 3
-  shootingRange: 40
-  bulletPrefab: {fileID: 3993236477473215754, guid: bc522d4174d49374bb7561594dec445f, type: 3}
-  bulletSpeed: 10
-  bulletLifetime: 10
-  fireRate: 3
-  health: 1000
-  waveIncrementHealth: 500
-  damageMultiplier: 1.5
-  damage: 10
-  bombPrefab: {fileID: 5373790843045087937, guid: 27342b14116bb9a42bde5f48cf4b8894, type: 3}
 --- !u!61 &-65468641564669103
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -292,6 +266,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1067941051456375449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000362057270645552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a9c07fa94acc37448aa65d4f812e866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  moveSpeed: 1
+  attackRange: 1
+  attackCooldown: 3
+  shootingRange: 60
+  bulletPrefab: {fileID: 3993236477473215754, guid: bc522d4174d49374bb7561594dec445f, type: 3}
+  bulletSpeed: 10
+  bulletLifetime: 5
+  fireRate: 3
+  health: 1000
+  waveIncrementHealth: 500
+  damageMultiplier: 1.5
+  damage: 10
+  spiralBulletCount: 30
+  spiralRotationSpeed: 200
+  spiralOffset: 180
 --- !u!1 &2610479789102654278
 GameObject:
   m_ObjectHideFlags: 0
