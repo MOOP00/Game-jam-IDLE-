@@ -1,34 +1,26 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-
 
 public class shooting : MonoBehaviour
 {
     private Camera mainCam;
     private Vector3 mousePos;
-    public GameObject bullet;
-    public Transform bulletTransform;
+    public GameObject bullet;  // Prefab ของกระสุน
+    public Transform bulletTransform;  // ตำแหน่งที่กระสุนจะถูกยิงออกมา
     public bool canFire;
     private float timer;
     public float timeBetweenFiring;
+    public int damage = 25;  // เพิ่มความเสียหายให้กระสุน
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-
         Vector2 rotation = mousePos - transform.position;
-
         float rotz = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-
         transform.rotation = Quaternion.Euler(0, 0, rotz);
 
         if (!canFire)
@@ -44,7 +36,42 @@ public class shooting : MonoBehaviour
         if (Input.GetMouseButton(0) && canFire)
         {
             canFire = false;
-            Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+            Shoot();
+        }
+    }
+
+    void Shoot()
+    {
+        GameObject newBullet = Instantiate(bullet, bulletTransform.position, bulletTransform.rotation);
+        Rigidbody2D rb = newBullet.GetComponent<Rigidbody2D>();
+
+        Vector2 direction = (mousePos - transform.position).normalized;
+        rb.linearVelocity = direction * 10f;  // กำหนดความเร็วกระสุน
+
+        // ใส่ Collider2D ให้ Prefab ของกระสุนที่คุณยิงเอง
+    }
+}
+
+public class Bullet : MonoBehaviour
+{
+    public int damage = 25;  // กำหนดความเสียหาย
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        // ตรวจสอบว่ากระสุนชนกับศัตรู
+        if (collision.CompareTag("Enemy"))
+        {
+            // ดึงข้อมูล EnemyHealth component ของศัตรู
+            EnemyHealth enemyHealth = collision.GetComponent<EnemyHealth>();
+
+            // ถ้าศัตรูมี EnemyHealth component ให้ทำดาเมจ
+            if (enemyHealth != null)
+            {
+                enemyHealth.TakeDamage(damage);  // เรียกใช้ฟังก์ชัน TakeDamage ของศัตรู
+            }
+
+            // ทำลายกระสุนหลังจากทำดาเมจ
+            Destroy(gameObject);
         }
     }
 }

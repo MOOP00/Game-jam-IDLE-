@@ -12,7 +12,7 @@ public class MiniBoss : MonoBehaviour
     public float bulletSpeed = 10f; // Speed of the bullets
     public float bulletLifetime = 3f; // Lifetime of the bullets before they are destroyed
     public float fireRate = 1f; // Time between shots in seconds
-    public int health = 100; // Mini boss health
+
     public int waveIncrementHealth = 50; // Health increment per wave
     public int pelletsPerShot = 5; // Number of pellets per shotgun shot
     public float spreadAngle = 30f; // Total spread angle of the shotgun
@@ -24,7 +24,7 @@ public class MiniBoss : MonoBehaviour
     void Start()
     {
         // Find the player object in the scene by tag
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("_player").transform;
     }
 
     void Update()
@@ -97,9 +97,5 @@ public class MiniBoss : MonoBehaviour
             }
         }
     }
-
-    public void IncreaseDifficulty(int waveNumber)
-    {
-        health += waveIncrementHealth * waveNumber;
-    }
 }
+    
