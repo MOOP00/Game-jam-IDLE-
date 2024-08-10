@@ -79,10 +79,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 56128644427305584, guid: 3328deb31d9abe84ea8e98c157639bb2, type: 3}
   spawnInterval: 2
-  enemiesPerSpawn: 1
+  minEnemiesPerSpawn: 3
+  maxEnemiesPerSpawn: 8
   toggleSpawnButton: {fileID: 0}
-  minSpawn: {fileID: 7340789026227099944}
-  maxSpawn: {fileID: 4704755447023694974}
+  minSpawn: {fileID: 0}
+  maxSpawn: {fileID: 0}
 --- !u!1 &6160779319423059926
 GameObject:
   m_ObjectHideFlags: 0

@@ -283,17 +283,20 @@ MonoBehaviour:
   attackRange: 1
   attackCooldown: 3
   shootingRange: 60
-  bulletPrefab: {fileID: 3993236477473215754, guid: bc522d4174d49374bb7561594dec445f, type: 3}
+  bulletPrefab: {fileID: 3400499756495865421, guid: bce6b988f9ca40d4981802d82bfa59dc, type: 3}
   bulletSpeed: 10
   bulletLifetime: 5
   fireRate: 3
   health: 1000
-  waveIncrementHealth: 500
-  damageMultiplier: 1.5
-  damage: 10
+  waveIncrementHealth: 600
+  damageMultiplier: 1.2
+  damage: 1
   spiralBulletCount: 30
   spiralRotationSpeed: 200
   spiralOffset: 180
+  vortexSpeed: 50
+  shotsBeforeCooldown: 150
+  cooldownDuration: 7
 --- !u!1 &2610479789102654278
 GameObject:
   m_ObjectHideFlags: 0

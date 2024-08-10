@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet1 : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D collision)
     {
+        // Check if the bullet collided with the player
         if (collision.CompareTag("Player"))
         {
             Debug.Log("Bullet hit the player!");
 
-            // Destroy the bullet
+            // Implement damage to the player here, if necessary
+
+            // Destroy the bullet after it hits the player
             Destroy(gameObject);
         }
     }

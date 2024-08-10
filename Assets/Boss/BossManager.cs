@@ -4,8 +4,8 @@ public class BossManager : MonoBehaviour
 {
     public GameObject[] bossPrefabs;
     public Transform player;
-    public float minSpawnDistance = 20f;
-    public float maxSpawnDistance = 40f;
+    public float minSpawnDistance = 40f;
+    public float maxSpawnDistance = 60f;
     private int waveNumber = 0;
 
     void Update()

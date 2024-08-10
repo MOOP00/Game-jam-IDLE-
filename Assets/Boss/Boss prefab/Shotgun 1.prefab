@@ -463,14 +463,16 @@ MonoBehaviour:
   shootingRange: 60
   bulletPrefab: {fileID: 3993236477473215754, guid: bc522d4174d49374bb7561594dec445f, type: 3}
   bulletSpeed: 10
-  bulletLifetime: 2
+  bulletLifetime: 5
   fireRate: 3
   health: 1000
-  waveIncrementHealth: 500
-  damageMultiplier: 1.5
-  damage: 10
+  waveIncrementHealth: 600
+  damageMultiplier: 1.2
+  damage: 1
   pelletsPerShot: 15
-  spreadAngle: 70
+  spreadAngle: 90
+  shotsBeforeCooldown: 75
+  cooldownDuration: 5
 --- !u!1 &6537108957054842243
 GameObject:
   m_ObjectHideFlags: 0

@@ -364,11 +364,11 @@ MonoBehaviour:
   fireRate: 3
   health: 1000
   waveIncrementHealth: 600
-  damageMultiplier: 1.5
-  damage: 10
+  damageMultiplier: 1.2
+  damage: 1
   bulletsPerBurst: 1
-  maxBulletsBeforeCooldown: 100
-  cooldownDuration: 2
+  maxBulletsBeforeCooldown: 300
+  cooldownDuration: 10
 --- !u!1 &5674496850237198341
 GameObject:
   m_ObjectHideFlags: 0
