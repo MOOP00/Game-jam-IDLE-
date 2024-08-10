@@ -8,7 +8,7 @@ public class Enemys : EnemyBase
         speed = 4f;
     }
 
-    public override void TakeDamage(int damage)
+    public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
     }

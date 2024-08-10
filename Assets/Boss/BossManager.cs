@@ -7,6 +7,7 @@ public class BossManager : MonoBehaviour
     public float minSpawnDistance = 40f;
     public float maxSpawnDistance = 60f;
     private int waveNumber = 0;
+    public GameObject healthBarPrefab; // Assign this in the inspector
 
     void Update()
     {
@@ -32,6 +33,9 @@ public class BossManager : MonoBehaviour
 
             Boss boss = bossInstance.GetComponent<Boss>();
             boss.IncreaseDifficulty(waveNumber);
+
+            // Assign the health bar prefab to the boss instance
+            boss.healthBarPrefab = healthBarPrefab;
         }
     }
 }

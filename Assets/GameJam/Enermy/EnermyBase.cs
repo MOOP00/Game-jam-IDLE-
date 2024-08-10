@@ -5,7 +5,9 @@ public class EnemyBase : MonoBehaviour
     public float speed = 2f;
     public float health = 30f;
     public float despawnDistance = 13f;
-    public float waveIncrementHealth; 
+    public float waveIncrementHealth;
+    public float damageMultiplier = 1.2f;
+    public int damage = 1;
 
     protected Transform player;
 
@@ -14,6 +16,7 @@ public class EnemyBase : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         waveIncrementHealth = health * 1.125f;
+
     }
 
     protected virtual void Update()
@@ -44,9 +47,10 @@ public class EnemyBase : MonoBehaviour
     {
         float additionalHealth = waveIncrementHealth * waveNumber;
         health += (int)additionalHealth;
+        damageMultiplier += waveNumber * 2f;
     }
 
-    public virtual void TakeDamage(int damage)
+    public virtual void TakeDamage(float damage)
     {
         health -= damage;
         if (health <= 0)
