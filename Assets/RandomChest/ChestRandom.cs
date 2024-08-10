@@ -1,7 +1,6 @@
-﻿using NUnit.Framework.Interfaces;
-using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Chest : MonoBehaviour
 {
@@ -10,7 +9,6 @@ public class Chest : MonoBehaviour
     public GameObject This_item;
     public Transform itemHolder;
     public SO_Item itemData;
-    //Animator animator;
     public Inventory inventory;
 
     [Header("Animator")]
@@ -37,6 +35,7 @@ public class Chest : MonoBehaviour
     public bool invFull;
 
     private int itemImageCounter = 0;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -48,14 +47,15 @@ public class Chest : MonoBehaviour
         {
             TapOpen_Button.onClick.AddListener(ToggleChest);
         }
-
     }
+
     void UpdateText(SO_Item data)
     {
         text.color = GetRarityColor(data.rarity);
         text.gameObject.SetActive(true);
         text.text = data.itemName;
     }
+
     void UpdateStat(SO_Item data)
     {
         itemname.text = data.itemName;
@@ -65,6 +65,7 @@ public class Chest : MonoBehaviour
         Type.text = GetItemTypeName(data.type);
         Multi.text = CalculateValue(data.rarity);
     }
+
     string GetItemTypeName(TypeWeapon type)
     {
         switch (type)
@@ -77,6 +78,7 @@ public class Chest : MonoBehaviour
                 return "Unknown";
         }
     }
+
     Color GetRarityColor(Rarity rarity)
     {
         switch (rarity)
@@ -95,6 +97,7 @@ public class Chest : MonoBehaviour
                 return Color.white;
         }
     }
+
     string GetRarityName(Rarity rarity)
     {
         switch (rarity)
@@ -113,6 +116,7 @@ public class Chest : MonoBehaviour
                 return "Unknown";
         }
     }
+
     string CalculateValue(Rarity rarity)
     {
         switch (rarity)
@@ -139,6 +143,7 @@ public class Chest : MonoBehaviour
             ShowItem();
         }
     }
+
     void HideItem()
     {
         text.gameObject.SetActive(false);
@@ -151,12 +156,14 @@ public class Chest : MonoBehaviour
         }
         itemHolder.gameObject.SetActive(false);
     }
+
     public void Collect()
     {
-        inventory.AddItem(itemData,1);
+        inventory.AddItem(itemData, 1);
         Pressed = true;
-        HideItem(); 
+        HideItem();
     }
+
     public void Drop()
     {
         Pressed = true;
@@ -169,14 +176,23 @@ public class Chest : MonoBehaviour
         CollectButton.gameObject.SetActive(true);
         DropButton.gameObject.SetActive(true);
         panel.gameObject.SetActive(true);
-        itemData = lootTable.GetRandom();
+
+        // Get a new random item from lootTable
+        SO_Item randomItem = lootTable.GetRandom();
+
+        // Clone the random item
+        itemData = randomItem.Clone();
+
+        // Assign a unique string ID
+        itemData.id = $"{itemData.itemName}_{++itemImageCounter}";
+
         UpdateText(itemData);
         UpdateStat(itemData);
+
         if (itemData != null)
         {
             if (itemData.icon != null)
             {
-                itemData.gamePrefab.name = $"{itemData.gamePrefab.name}_{++itemImageCounter}";
                 GameObject imageObject = new GameObject("ItemImage");
                 imageObject.transform.SetParent(itemHolder, false);
 
@@ -186,7 +202,6 @@ public class Chest : MonoBehaviour
 
                 itemHolder.gameObject.SetActive(true);
             }
-
         }
     }
 }

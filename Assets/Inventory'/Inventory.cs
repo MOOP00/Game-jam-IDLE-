@@ -34,11 +34,99 @@ public class Inventory : MonoBehaviour
     public Button use_3;
     public Button use_4;
 
+    [Header("Pannel_Description")]
+    public GameObject panel;
+    public TextMeshProUGUI itemname;
+    public TextMeshProUGUI Dmg;
+    public TextMeshProUGUI Multi;
+    public TextMeshProUGUI rarity;
+    public TextMeshProUGUI Type;
+
     private ItemStat currentItemStat;
     void Start()
     {
         gridLayoutGroup = inventoryPannel.GetComponent<GridLayoutGroup>();
         CreateInventorySlot();
+    }
+    void UpdateStat(SO_Item data,int lvl)
+    {
+        itemname.text = data.itemName;
+        Dmg.text = data.Damgae.ToString();
+        rarity.text = GetRarityName(data.rarity);
+        rarity.color = GetRarityColor(data.rarity);
+        Type.text = GetItemTypeName(data.type);
+        Multi.text = CalculateValue(data.rarity,lvl);
+        panel.gameObject.SetActive(true);
+    }
+
+    string GetItemTypeName(TypeWeapon type)
+    {
+        switch (type)
+        {
+            case TypeWeapon.Main:
+                return "Main Weapon";
+            case TypeWeapon.Support:
+                return "Support Weapon";
+            default:
+                return "Unknown";
+        }
+    }
+
+    Color GetRarityColor(Rarity rarity)
+    {
+        switch (rarity)
+        {
+            case Rarity.Common:
+                return Color.white;
+            case Rarity.Uncommon:
+                return Color.green;
+            case Rarity.Rare:
+                return Color.blue;
+            case Rarity.Epic:
+                return Color.magenta;
+            case Rarity.Legendary:
+                return Color.yellow;
+            default:
+                return Color.white;
+        }
+    }
+
+    string GetRarityName(Rarity rarity)
+    {
+        switch (rarity)
+        {
+            case Rarity.Common:
+                return "Common";
+            case Rarity.Uncommon:
+                return "Uncommon";
+            case Rarity.Rare:
+                return "Rare";
+            case Rarity.Epic:
+                return "Epic";
+            case Rarity.Legendary:
+                return "Legendary";
+            default:
+                return "Unknown";
+        }
+    }
+
+    string CalculateValue(Rarity rarity, int lvl)
+    {
+        switch (rarity)
+        {
+            case Rarity.Common:
+                return $"x{1.25 + (0.25 * lvl)}";
+            case Rarity.Uncommon:
+                return $"x{2 + (0.5 * lvl)}";
+            case Rarity.Rare:
+                return $"x{5 + (1.25 *lvl)}";
+            case Rarity.Epic:
+                return $"x{10 + (2.5 * lvl)}";
+            case Rarity.Legendary:
+                return $"x{50 + (10 * lvl)}";
+            default:
+                return "Unknown";
+        }
     }
     public void SetCurrentItemStat(ItemStat stat)
     {
@@ -85,7 +173,19 @@ public class Inventory : MonoBehaviour
             invSlot.SetThisSlot(Empty_Item, 0);
         }
     }
-
+   public void Show_Stat()
+    {
+        if (rightClickSlot != null)
+        {
+            SO_Item selectedItem = rightClickSlot.item;
+            int lvl = rightClickSlot.stacklvl;
+            if (selectedItem != null && selectedItem != Empty_Item)
+            {
+                UpdateStat(selectedItem,lvl);
+            }
+        }
+        OnFinishMiniCanvas();
+    }
     public void RemoveItem(InventorySlot slot)
     {
         slot.SetThisSlot(Empty_Item, 0);

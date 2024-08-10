@@ -1,10 +1,8 @@
-﻿using NUnit.Framework;
-using System.Collections.Generic;
-using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using static WeightedRandomList;
+using TMPro;
+using System.Collections.Generic;
 
 public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler, IPointerClickHandler
 {
@@ -27,6 +25,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     [Header("WeaponSlot")]
     public Weapon WeaponSlot;
+    public WeaponSupport weaponSupport;
 
     [System.Serializable]
     public struct ItemStat
@@ -41,13 +40,16 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         }
     }
     public List<ItemStat> This_Item = new List<ItemStat>();
+
     void Start()
     {
-        WeaponSlot = FindAnyObjectByType<Weapon>();
+        weaponSupport = FindObjectOfType<WeaponSupport>();
+        WeaponSlot = FindObjectOfType<Weapon>();
         Canvas = GetComponentInParent<Canvas>();
         CanvasGroup = GetComponent<CanvasGroup>();
         siblingIndex = transform.GetSiblingIndex();
     }
+
     #region Drag And Drop
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -75,16 +77,109 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         if (eventData.pointerDrag != null)
         {
-            InventorySlot slot = eventData.pointerDrag.GetComponent<InventorySlot>();
-            if (slot != null)
+            InventorySlot draggedSlot = eventData.pointerDrag.GetComponent<InventorySlot>();
+            if (draggedSlot != null)
             {
-                if (slot.item == item && item != Inventory.Empty_Item)
+                bool handled = false; // ตัวบ่งชี้ว่าไอเท็มถูกจัดการหรือไม่
+
+                if (item != null && draggedSlot.item != null && item.itemName == draggedSlot.item.itemName)
                 {
-                    MergeSlot(slot);
+                    if (item.type == TypeWeapon.Main)
+                    {
+                        // จัดการอาวุธหลัก
+                        if (WeaponSlot != null && WeaponSlot.HasWeaponWithName(item.itemName))
+                        {
+                            MergeSlot(draggedSlot);
+                            UseItem_Main();
+                            handled = true;
+                        }
+                        else
+                        {
+                            // ทำให้ไอเท็มอยู่ที่ตำแหน่งที่ต้องการ
+                            if (eventData.pointerCurrentRaycast.gameObject != null)
+                            {
+                                InventorySlot targetSlot = eventData.pointerCurrentRaycast.gameObject.GetComponent<InventorySlot>();
+                                if (targetSlot != null)
+                                {
+                                    // ตั้งค่าตำแหน่งของไอเท็มที่ลากให้ตรงกับตำแหน่งของช่องเป้าหมาย
+                                    draggedSlot.transform.position = targetSlot.transform.position;
+                                    draggedSlot.transform.SetSiblingIndex(targetSlot.transform.GetSiblingIndex());
+                                }
+                            }
+
+                            MergeSlot(draggedSlot);
+                            handled = true;
+                        }
+                    }
+                    else if (item.type == TypeWeapon.Support)
+                    {
+                        // จัดการอาวุธสนับสนุน
+                        if (weaponSupport != null)
+                        {
+                            int slotIndex = -1;
+                            bool draggedItemInSupport = false;
+                            bool currentItemInSupport = false;
+
+                            // ตรวจสอบว่าไอเท็มที่ถูกลากอยู่ในช่องสนับสนุนหรือไม่
+                            for (int i = 0; i < weaponSupport.supportSlots.Length; i++)
+                            {
+                                if (weaponSupport.supportSlots[i].itemData != null)
+                                {
+                                    if (weaponSupport.supportSlots[i].itemData.itemName == draggedSlot.item.itemName)
+                                    {
+                                        slotIndex = i;
+                                        draggedItemInSupport = true;
+                                    }
+
+                                    if (weaponSupport.supportSlots[i].itemData.itemName == item.itemName)
+                                    {
+                                        currentItemInSupport = true;
+                                    }
+                                }
+                            }
+
+                            if (slotIndex != -1)
+                            {
+                                // ทั้งสองไอเท็มอยู่ในช่องสนับสนุน
+                                if (draggedItemInSupport && currentItemInSupport)
+                                {
+                                    MergeSlot(draggedSlot);
+                                    weaponSupport.EquipSupportItem(item, stacklvl, slotIndex);
+                                    Debug.Log("After merge: " + stacklvl);
+                                    Debug.Log("EquipSupportItem called with stacklvl: " + stacklvl);
+
+                                    if (draggedSlot.stacklvl == 0)
+                                    {
+                                        weaponSupport.ClearSupportSlot(draggedSlot.item);
+                                    }
+
+                                    handled = true;
+                                }
+                                else
+                                {
+                                    MergeSlot(draggedSlot);
+                                    Debug.Log("After merge: " + stacklvl);
+                                    weaponSupport.EquipSupportItem(item, stacklvl, slotIndex);
+                                    Debug.Log("EquipSupportItem called with stacklvl: " + stacklvl);
+                                    handled = true;
+                                }
+                            }
+                            else
+                            {
+                                MergeSlot(draggedSlot);
+                                Debug.Log("After merge: " + stacklvl);
+                                weaponSupport.EquipSupportItem(item, stacklvl, -1);
+                                Debug.Log("EquipSupportItem called with stacklvl: " + stacklvl);
+                                handled = true;
+                            }
+                        }
+                    }
                 }
-                else
+
+                if (!handled)
                 {
-                    SwapSlot(slot);
+                    // ถ้าไม่ได้จัดการตามเงื่อนไขด้านบน ทำการสลับตำแหน่ง
+                    SwapSlot(draggedSlot);
                 }
             }
         }
@@ -103,7 +198,6 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             Inventory.OpenMiniCanvas(eventData.position);
         }
     }
-
 
     #endregion
 
@@ -127,6 +221,15 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void MergeSlot(InventorySlot mergeSlot)
     {
+        if (item == null || mergeSlot.item == null)
+        {
+            Debug.LogError("Item or mergeSlot item is null!");
+            return;
+        }
+
+        SO_Item overwrittenItem = mergeSlot.item;
+        int overwrittenStackLevel = mergeSlot.stacklvl;
+
         int totalAmount = stacklvl + mergeSlot.stacklvl;
         int maxLevel = item.MaxLevel;
 
@@ -139,12 +242,30 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         if (mergeSlot.stacklvl == 0)
         {
             Inventory.RemoveItem(mergeSlot);
+
+            if (weaponSupport != null)
+            {
+                for (int i = 0; i < weaponSupport.supportSlots.Length; i++)
+                {
+                    if (weaponSupport.supportSlots[i].itemData != null && weaponSupport.supportSlots[i].itemData.id == overwrittenItem.id)
+                    {
+                        weaponSupport.supportSlots[i] = new WeaponSupport.Data_Item(0, null); // เคลียร์ข้อมูลในช่อง
+                        weaponSupport.ClearSupportSlot(overwrittenItem); // เคลียร์ไอคอนในช่อง
+                        break;
+                    }
+                }
+
+                weaponSupport.UpdateSupportSlots();
+            }
         }
     }
+
+
     public void UseItem_Main()
     {
         WeaponSlot.EquipWeapon(item, stacklvl);
     }
+
     public ItemStat ReturnStat()
     {
         return new ItemStat(item, stacklvl);

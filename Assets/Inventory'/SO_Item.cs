@@ -12,9 +12,14 @@ public class SO_Item : ScriptableObject
     public Rarity rarity;
     public TypeWeapon type;
 
-
     [Header("Prefab")]
     public GameObject gamePrefab;
+
+    public SO_Item Clone()
+    {
+        return Instantiate(this);
+    }
 }
-public enum Rarity { Common,Uncommon,Rare,Epic,Legendary }
-public enum TypeWeapon { Main,Support }
+
+public enum Rarity { Common, Uncommon, Rare, Epic, Legendary }
+public enum TypeWeapon { Main, Support }
