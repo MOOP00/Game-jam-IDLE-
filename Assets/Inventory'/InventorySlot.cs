@@ -16,6 +16,7 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     [Header("UI")]
     public Image icon;
     public TextMeshProUGUI stacklvltext;
+    public TextMeshProUGUI Type;
 
     [Header("Drag and Drop")]
     public int siblingIndex;
@@ -278,17 +279,32 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         stacklvl = Mathf.Clamp(amount, 0, newitem.MaxLevel);
         CheckShowText();
     }
+    string GetItemTypeName(TypeWeapon type)
+    {
+        switch (type)
+        {
+            case TypeWeapon.Main:
+                return "M";
+            case TypeWeapon.Support:
+                return "S";
+            default:
+                return "U";
+        }
+    }
 
     public void CheckShowText()
     {
+        Type.text = GetItemTypeName(item.type);
         stacklvltext.text = stacklvl.ToString();
         if (item.MaxLevel < 2)
         {
             stacklvltext.gameObject.SetActive(false);
+            Type.gameObject.SetActive(false);
         }
         else
         {
             stacklvltext.gameObject.SetActive(stacklvl > 1);
+            Type.gameObject.SetActive(true);
         }
     }
 }
