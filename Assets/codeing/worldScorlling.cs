@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class worldScorlling : MonoBehaviour
 {
-
     [SerializeField] Transform playerTransform;
     Vector2Int currentTilePosition = new Vector2Int(0, 0);
     [SerializeField] Vector2Int playerTilePosition;
@@ -15,18 +14,11 @@ public class worldScorlling : MonoBehaviour
     [SerializeField] int terrainTileHorizontalCount;
     [SerializeField] int terrainTileVerticalCount;
 
-    [SerializeField] int fieldOfVisionHeight = 5;  // เพิ่มขนาดฟิลด์การมองเห็น
-    [SerializeField] int fieldOfVisionWidth = 5;   // เพิ่มขนาดฟิลด์การมองเห็น
-    
-
-   
+    [SerializeField] int fieldOfVisionHeight = 3;
+    [SerializeField] int fieldOfVisionWidth = 3;
 
     private void Awake() {
         terrainTiles = new GameObject[terrainTileHorizontalCount, terrainTileVerticalCount];
-    }
-
-    private void Start() {
-        StartCoroutine(UpdateTilesScreenCoroutine());
     }
 
     private void Update() {
@@ -41,13 +33,8 @@ public class worldScorlling : MonoBehaviour
 
             onTileGridPlayerPosition.x = CalculatePositionOnAxis(playerTilePosition.x, true);
             onTileGridPlayerPosition.y = CalculatePositionOnAxis(playerTilePosition.y, false);
-        }
-    }
 
-    private IEnumerator UpdateTilesScreenCoroutine() {
-        while (true) {
             UpdateTilesScreen();
-            yield return null; // รอจนกว่าจะถึงเฟรมถัดไปเพื่อไม่ให้เกิดการกระตุก
         }
     }
 
@@ -59,7 +46,7 @@ public class worldScorlling : MonoBehaviour
 
                 GameObject tile = terrainTiles[tileToUpdate_x, tileToUpdate_y];
 
-
+                // ปรับตำแหน่งไทล์ใหม่ให้ตรงกับตำแหน่งที่คำนวณได้
                 if (tile != null) {
                     tile.transform.position = CalculateTilePosition(
                         playerTilePosition.x + pov_x,
@@ -75,15 +62,17 @@ public class worldScorlling : MonoBehaviour
 
     private int CalculatePositionOnAxis(float currentValue, bool horizontal) {
         int maxCount = horizontal ? terrainTileHorizontalCount : terrainTileVerticalCount;
+
+        // จัดการค่าที่เป็นลบและค่าที่เกินขอบเขต
         int position = ((int)currentValue % maxCount + maxCount) % maxCount;
+
         return position;
     }
-
-   
 
     public void Add(GameObject tileGameObject, Vector2Int tilePosition) {
         terrainTiles[tilePosition.x, tilePosition.y] = tileGameObject;
     }
+
 
 }
 
