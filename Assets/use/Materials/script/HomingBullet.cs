@@ -40,7 +40,7 @@ public class HomingBullet : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            EnemyHealth enemyHealth = collision.GetComponent<EnemyHealth>();
+            Enemys enemyHealth = collision.GetComponent<Enemys>();
 
             if (enemyHealth != null)
             {
