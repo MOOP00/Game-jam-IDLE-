@@ -44,6 +44,18 @@ public abstract class Boss : MonoBehaviour
         healthBarRect.anchoredPosition = new Vector2(0, 1.5f); // Adjust this value to place it above the boss
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("_player"))
+        {
+            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(damage * damageMultiplier); // Use the existing damage variable
+            }
+        }
+    }
+
     protected virtual void Update()
     {
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
@@ -77,7 +89,15 @@ public abstract class Boss : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
     }
 
-    protected abstract void AttackPlayer();
+    protected virtual void AttackPlayer()
+    {
+        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(damage * damageMultiplier);
+        }
+    }
+
     protected abstract void ShootPlayer();
 
     public void IncreaseDifficulty(int waveNumber)
@@ -98,7 +118,6 @@ public abstract class Boss : MonoBehaviour
         if (health <= 0)
         {
             Die();
-            
         }
     }
 

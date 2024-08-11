@@ -5543,6 +5543,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6611650382153795812, guid: f67d28defd47a654892d2f31f3cf15a6, type: 3}
+      propertyPath: m_Volume
+      value: 0.11
+      objectReference: {fileID: 0}
     - target: {fileID: 7199410507493452200, guid: f67d28defd47a654892d2f31f3cf15a6, type: 3}
       propertyPath: m_Name
       value: Sound_Manager
@@ -47772,7 +47776,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -49136,6 +49140,7 @@ GameObject:
   - component: {fileID: 4447112655711600406}
   - component: {fileID: 6283167949277371541}
   - component: {fileID: 3496690037080747336}
+  - component: {fileID: 9167544822177433886}
   m_Layer: 0
   m_Name: Player
   m_TagString: _player
@@ -65333,7 +65338,7 @@ Transform:
   m_GameObject: {fileID: 5873097334861357432}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.662995, y: 7.6438184, z: -0.18610768}
+  m_LocalPosition: {x: -6.14, y: 6.68, z: -0.18610768}
   m_LocalScale: {x: 6.6564403, y: 6.6564403, z: 6.6564403}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -65343,6 +65348,19 @@ Transform:
   - {fileID: 2724907764241732798}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9167544822177433886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5873097334861357432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39bce12609c4cbd47bd2effa531d8a83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

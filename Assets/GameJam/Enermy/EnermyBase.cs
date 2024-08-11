@@ -6,21 +6,43 @@ public class EnemyBase : MonoBehaviour
     public float health = 30f;
     public float waveIncrementHealth;
     public float damageMultiplier = 1.2f;
-    public int damage = 1;
+    public int damage = 2;
+    public float attackRange = 2f; // ระยะโจมตี
+    public float attackCooldown = 1f; // เวลาระหว่างการโจมตีแต่ละครั้ง
 
     protected Transform player;
+    private float lastAttackTime; // เวลาโจมตีล่าสุด
 
     protected virtual void Start()
     {
         player = GameObject.FindGameObjectWithTag("_player").transform;
-
         waveIncrementHealth = health * 1.125f;
     }
 
     protected virtual void Update()
     {
         MoveTowardsPlayer();
+
+        // โจมตีผู้เล่นเมื่ออยู่ในระยะโจมตี
+        if (Vector2.Distance(transform.position, player.position) <= attackRange && Time.time >= lastAttackTime + attackCooldown)
+        {
+            AttackPlayer();
+            lastAttackTime = Time.time;
+        }
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("_player"))
+        {
+            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(damage * damageMultiplier); // Use the existing damage variable
+            }
+        }
+    }
+
 
     protected void MoveTowardsPlayer()
     {
@@ -30,10 +52,18 @@ public class EnemyBase : MonoBehaviour
         transform.position += direction * speed * Time.deltaTime;
     }
 
+    protected virtual void AttackPlayer()
+    {
+        // เพิ่มโค้ดสำหรับการทำดาเมจใส่ผู้เล่นที่นี่
+        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>(); // Assuming you have a PlayerHealth script on the player
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(damage * damageMultiplier);
+        }
+    }
+
     public void IncreaseDifficulty(int waveNumber)
     {
-        //float additionalHealth = waveIncrementHealth * EnemySpawner.Instance.waveNumber;
-        //health += additionalHealth; // Remove cast to int for float values
         damageMultiplier += waveNumber * 2f;
     }
 
