@@ -1,0 +1,1717 @@
+fileFormatVersion: 2
+guid: b79e51cc36a5fd244b5a9dfa9fdabc5a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3268116876886179480
+    second: mage_idle_0
+  - first:
+      213: -5495861832342831202
+    second: mage_idle_1
+  - first:
+      213: 3193941420723979432
+    second: mage_idle_2
+  - first:
+      213: 8089392500444833290
+    second: mage_idle_3
+  - first:
+      213: -7760650516033981637
+    second: mage_idle_4
+  - first:
+      213: 1773732111931389266
+    second: mage_idle_5
+  - first:
+      213: 2412548871939554092
+    second: mage_idle_6
+  - first:
+      213: -3312047492970449855
+    second: mage_idle_7
+  - first:
+      213: -9057138682151220882
+    second: mage_idle_8
+  - first:
+      213: -6193619010718286167
+    second: mage_idle_9
+  - first:
+      213: 8398973367618223488
+    second: mage_idle_10
+  - first:
+      213: 3811905345939917946
+    second: mage_idle_11
+  - first:
+      213: -5493266081198311995
+    second: mage_idle_12
+  - first:
+      213: -398099536419101692
+    second: mage_idle_13
+  - first:
+      213: 7188243929877443828
+    second: mage_idle_14
+  - first:
+      213: -6758995325750900458
+    second: mage_idle_15
+  - first:
+      213: 4010844921912244361
+    second: mage_idle_16
+  - first:
+      213: -3892978155878257941
+    second: mage_idle_17
+  - first:
+      213: -5548691024609051637
+    second: mage_idle_18
+  - first:
+      213: 8315668917593528581
+    second: mage_idle_19
+  - first:
+      213: 4296991723687861547
+    second: mage_idle_20
+  - first:
+      213: -7955690468683513633
+    second: mage_idle_21
+  - first:
+      213: -2124516826421290528
+    second: mage_idle_22
+  - first:
+      213: 7390223580134504027
+    second: mage_idle_23
+  - first:
+      213: -8114459626403206416
+    second: mage_idle_24
+  - first:
+      213: -2099524481457448583
+    second: mage_idle_25
+  - first:
+      213: 6415852910023281007
+    second: mage_idle_26
+  - first:
+      213: -8879125953935217127
+    second: mage_idle_27
+  - first:
+      213: 4499413008169606738
+    second: mage_idle_28
+  - first:
+      213: -3430335808234918247
+    second: mage_idle_29
+  - first:
+      213: -4242658071340623615
+    second: mage_idle_30
+  - first:
+      213: 4022407620806722290
+    second: mage_idle_31
+  - first:
+      213: -5318936266994554148
+    second: mage_idle_32
+  - first:
+      213: 8544564469186338529
+    second: mage_idle_33
+  - first:
+      213: -4128849998921915101
+    second: mage_idle_34
+  - first:
+      213: 7809681884283905631
+    second: mage_idle_35
+  - first:
+      213: -8245036211468760246
+    second: mage_idle_36
+  - first:
+      213: -2817387716856767140
+    second: mage_idle_37
+  - first:
+      213: -5156695627565904467
+    second: mage_idle_38
+  - first:
+      213: -3836829371411265809
+    second: mage_idle_39
+  - first:
+      213: -8220360927760660783
+    second: mage_idle_40
+  - first:
+      213: -2400184638672908876
+    second: mage_idle_41
+  - first:
+      213: -4832446361210326847
+    second: mage_idle_42
+  - first:
+      213: -5867466067474316627
+    second: mage_idle_43
+  - first:
+      213: 6862758467545160942
+    second: mage_idle_44
+  - first:
+      213: -6697117407007931782
+    second: mage_idle_45
+  - first:
+      213: 8227073824507176958
+    second: mage_idle_46
+  - first:
+      213: -7749313243208892125
+    second: mage_idle_47
+  - first:
+      213: -6738531905150445728
+    second: mage_idle_48
+  - first:
+      213: -7197843343082224778
+    second: mage_idle_49
+  - first:
+      213: -7270975931697190728
+    second: mage_idle_50
+  - first:
+      213: 6823413521310970600
+    second: mage_idle_51
+  - first:
+      213: 1713756022401945281
+    second: mage_idle_52
+  - first:
+      213: -7248523680573042364
+    second: mage_idle_53
+  - first:
+      213: -5478231815961383244
+    second: mage_idle_54
+  - first:
+      213: -7986853225579576419
+    second: mage_idle_55
+  - first:
+      213: -4046972902361604704
+    second: mage_idle_56
+  - first:
+      213: 5601801220211902378
+    second: mage_idle_57
+  - first:
+      213: 54968382131137706
+    second: mage_idle_58
+  - first:
+      213: 7024862449466203461
+    second: mage_idle_59
+  - first:
+      213: 7249682168963810928
+    second: mage_idle_60
+  - first:
+      213: 9040872779451362294
+    second: mage_idle_61
+  - first:
+      213: -7930182619625389606
+    second: mage_idle_62
+  - first:
+      213: 3184788182680301438
+    second: mage_idle_63
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: mage_idle_0
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 1918
+        width: 70
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8618db4040155a2d0800000000000000
+      internalID: -3268116876886179480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_1
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 1918
+        width: 70
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9ff39428c6cab3b0800000000000000
+      internalID: -5495861832342831202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_2
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 1918
+        width: 70
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a4c8a7ccc8235c20800000000000000
+      internalID: 3193941420723979432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_3
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 1917
+        width: 70
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0629b5ae9b434070800000000000000
+      internalID: 8089392500444833290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_4
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 1917
+        width: 70
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b33b7dd2971ac4490800000000000000
+      internalID: -7760650516033981637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_5
+      rect:
+        serializedVersion: 2
+        x: 1371
+        y: 1917
+        width: 70
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 255bf5a45ff8d9810800000000000000
+      internalID: 1773732111931389266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_6
+      rect:
+        serializedVersion: 2
+        x: 1627
+        y: 1917
+        width: 70
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2bf933ba681b7120800000000000000
+      internalID: 2412548871939554092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_7
+      rect:
+        serializedVersion: 2
+        x: 1883
+        y: 1917
+        width: 70
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 144f5466a5e3902d0800000000000000
+      internalID: -3312047492970449855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_8
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 1661
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e694de8fa549e4280800000000000000
+      internalID: -9057138682151220882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_9
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 1661
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aeb7003358db0aa0800000000000000
+      internalID: -6193619010718286167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_10
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 1661
+        width: 71
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08db9d637c52f8470800000000000000
+      internalID: 8398973367618223488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_11
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 1661
+        width: 71
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7c492e37bb96e430800000000000000
+      internalID: 3811905345939917946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_12
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 1661
+        width: 71
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c5f87d8a9ff3c3b0800000000000000
+      internalID: -5493266081198311995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_13
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 1661
+        width: 71
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 404ed72b49aa97af0800000000000000
+      internalID: -398099536419101692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_14
+      rect:
+        serializedVersion: 2
+        x: 1626
+        y: 1661
+        width: 71
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f4f33fe4c5c1c360800000000000000
+      internalID: 7188243929877443828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_15
+      rect:
+        serializedVersion: 2
+        x: 1882
+        y: 1661
+        width: 71
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 619871adf893332a0800000000000000
+      internalID: -6758995325750900458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_16
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 1405
+        width: 71
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98832c3c43269a730800000000000000
+      internalID: 4010844921912244361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_17
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 1405
+        width: 71
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bea658c3efc59f9c0800000000000000
+      internalID: -3892978155878257941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_18
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 1405
+        width: 71
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0c77cd49e61ff2b0800000000000000
+      internalID: -5548691024609051637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_19
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 1405
+        width: 71
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5095bee72d0376370800000000000000
+      internalID: 8315668917593528581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_20
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 1405
+        width: 71
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2d553dc43bf1ab30800000000000000
+      internalID: 4296991723687861547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_21
+      rect:
+        serializedVersion: 2
+        x: 1369
+        y: 1405
+        width: 72
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd088277ba5b79190800000000000000
+      internalID: -7955690468683513633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_22
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 1405
+        width: 72
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e991d9d3333482e0800000000000000
+      internalID: -2124516826421290528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_23
+      rect:
+        serializedVersion: 2
+        x: 1881
+        y: 1405
+        width: 72
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b56f1a8e0395f8660800000000000000
+      internalID: 7390223580134504027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_24
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 1148
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0faecf746f5a36f80800000000000000
+      internalID: -8114459626403206416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_25
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 1148
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9791e7d9b9dfcd2e0800000000000000
+      internalID: -2099524481457448583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_26
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 1149
+        width: 72
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f690811aa30b90950800000000000000
+      internalID: 6415852910023281007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_27
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 1149
+        width: 72
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91e6dbf0df107c480800000000000000
+      internalID: -8879125953935217127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_28
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 1148
+        width: 72
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25e98b1ca40217e30800000000000000
+      internalID: 4499413008169606738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_29
+      rect:
+        serializedVersion: 2
+        x: 1369
+        y: 1148
+        width: 72
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99eead1d1cff460d0800000000000000
+      internalID: -3430335808234918247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_30
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 1148
+        width: 72
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1095c4276fc0f15c0800000000000000
+      internalID: -4242658071340623615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_31
+      rect:
+        serializedVersion: 2
+        x: 1881
+        y: 1148
+        width: 72
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f242046b6672d730800000000000000
+      internalID: 4022407620806722290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_32
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 892
+        width: 73
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdae8d665a75f26b0800000000000000
+      internalID: -5318936266994554148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_33
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 892
+        width: 73
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ee964a1d14649670800000000000000
+      internalID: 8544564469186338529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_34
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 891
+        width: 73
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32523633dc063b6c0800000000000000
+      internalID: -4128849998921915101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_35
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 891
+        width: 73
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f56ab89db40916c60800000000000000
+      internalID: 7809681884283905631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_36
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 891
+        width: 73
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4b0c2fef3fb39d80800000000000000
+      internalID: -8245036211468760246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_37
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 891
+        width: 73
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5d14367cc0a6e8d0800000000000000
+      internalID: -2817387716856767140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_38
+      rect:
+        serializedVersion: 2
+        x: 1624
+        y: 891
+        width: 73
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dadcf18e5acbf68b0800000000000000
+      internalID: -5156695627565904467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_39
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 891
+        width: 73
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe60f3dd308d0cac0800000000000000
+      internalID: -3836829371411265809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_40
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 635
+        width: 73
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d6435f1a496bed80800000000000000
+      internalID: -8220360927760660783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_41
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 636
+        width: 73
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bd4d80b9c4d0bed0800000000000000
+      internalID: -2400184638672908876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_42
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 636
+        width: 72
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c0fdeb43a3bfecb0800000000000000
+      internalID: -4832446361210326847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_43
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 636
+        width: 72
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da20984e2b2929ea0800000000000000
+      internalID: -5867466067474316627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_44
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 636
+        width: 72
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eec555d377a6d3f50800000000000000
+      internalID: 6862758467545160942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_45
+      rect:
+        serializedVersion: 2
+        x: 1369
+        y: 636
+        width: 72
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a720530833f0f03a0800000000000000
+      internalID: -6697117407007931782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_46
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 636
+        width: 72
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef72aa2fd007c2270800000000000000
+      internalID: 8227073824507176958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_47
+      rect:
+        serializedVersion: 2
+        x: 1881
+        y: 636
+        width: 72
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 321cd45b9a8e47490800000000000000
+      internalID: -7749313243208892125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_48
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 380
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0671fdd3feceb72a0800000000000000
+      internalID: -6738531905150445728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_49
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 380
+        width: 71
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6738ca28d9f1c1c90800000000000000
+      internalID: -7197843343082224778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_50
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 380
+        width: 71
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b826c4d9ed481b90800000000000000
+      internalID: -7270975931697190728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_51
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 380
+        width: 71
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e276551272a1be50800000000000000
+      internalID: 6823413521310970600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_52
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 381
+        width: 71
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ce44f2c50c78c710800000000000000
+      internalID: 1713756022401945281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_53
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 381
+        width: 71
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 441df69ed12186b90800000000000000
+      internalID: -7248523680573042364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_54
+      rect:
+        serializedVersion: 2
+        x: 1626
+        y: 381
+        width: 71
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bee064303969f3b0800000000000000
+      internalID: -5478231815961383244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_55
+      rect:
+        serializedVersion: 2
+        x: 1882
+        y: 381
+        width: 71
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d938528be4ff82190800000000000000
+      internalID: -7986853225579576419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_56
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 125
+        width: 71
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0adda1b469346d7c0800000000000000
+      internalID: -4046972902361604704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_57
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 125
+        width: 71
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa78419b7889dbd40800000000000000
+      internalID: 5601801220211902378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_58
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 125
+        width: 71
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aacedcac37943c000800000000000000
+      internalID: 54968382131137706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_59
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 125
+        width: 70
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54dd960bd235d7160800000000000000
+      internalID: 7024862449466203461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_60
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 125
+        width: 70
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 076429fa58b0c9460800000000000000
+      internalID: 7249682168963810928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_61
+      rect:
+        serializedVersion: 2
+        x: 1371
+        y: 125
+        width: 70
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fb62be64e1a77d70800000000000000
+      internalID: 9040872779451362294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_62
+      rect:
+        serializedVersion: 2
+        x: 1627
+        y: 125
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad180416ce452f190800000000000000
+      internalID: -7930182619625389606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_idle_63
+      rect:
+        serializedVersion: 2
+        x: 1883
+        y: 125
+        width: 70
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7f65897af3a23c20800000000000000
+      internalID: 3184788182680301438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
