@@ -17,9 +17,9 @@ public class ShotgunBoss : Boss
     protected override void Start()
     {
         base.Start();
-        fireRate = 1.25f;
+        fireRate = 1.275f;
         damage = 5;
-        bulletSpeed = 5f;
+        bulletSpeed = 6f;
 
         // Get the Animator component
         animator = GetComponent<Animator>();

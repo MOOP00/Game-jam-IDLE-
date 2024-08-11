@@ -5,8 +5,8 @@ public class BossManager : MonoBehaviour
 {
     public GameObject[] bossPrefabs;
     public Transform player;
-    public float minSpawnDistance = 40f;
-    public float maxSpawnDistance = 60f;
+    public float minSpawnDistance = 30f;
+    public float maxSpawnDistance = 40f;
     private int waveNumber = 0;
     public GameObject healthBarPrefab; // Assign this in the inspector
 

@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1092041594123166293}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.54, y: -3.21, z: 0}
+  m_LocalPosition: {x: -20.4, y: -19.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -77,13 +77,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf080badd193344bb43195d0cafed61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 56128644427305584, guid: 3328deb31d9abe84ea8e98c157639bb2, type: 3}
-  spawnInterval: 2
+  enemyPrefab: {fileID: 4848903901295326105, guid: 116b3fa6988fa384691e1b767a09d7cc, type: 3}
+  spawnInterval: 3
   minEnemiesPerSpawn: 3
-  maxEnemiesPerSpawn: 8
-  toggleSpawnButton: {fileID: 0}
-  minSpawn: {fileID: 0}
-  maxSpawn: {fileID: 0}
+  maxEnemiesPerSpawn: 9
+  minSpawn: {fileID: 7340789026227099944}
+  maxSpawn: {fileID: 4704755447023694974}
+  waveDelay: 3
+  waveNumber: 0
+  waveText: {fileID: 0}
+  enemiesLeftText: {fileID: 0}
+  bossManager: {fileID: 0}
 --- !u!1 &6160779319423059926
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +113,7 @@ Transform:
   m_GameObject: {fileID: 6160779319423059926}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.44, y: 8.13, z: 0}
+  m_LocalPosition: {x: 10.3, y: 19.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

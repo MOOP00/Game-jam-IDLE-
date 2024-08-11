@@ -10,7 +10,31 @@ public class MeteorBoss : Boss
         base.Start();
         fireRate = 8f;
         damage = 50;
-        bulletSpeed = 1f;
+        bulletSpeed = 5f;
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+
+        // Check if the boss should flip based on the player's position
+        if (player != null)
+        {
+            Vector3 scale = transform.localScale;
+
+            // If the player is to the right of the boss and the boss is not already facing right
+            if (transform.position.x < player.position.x && scale.x < 0)
+            {
+                scale.x = Mathf.Abs(scale.x); // Flip to face right
+            }
+            // If the player is to the left of the boss and the boss is not already facing left
+            else if (transform.position.x > player.position.x && scale.x > 0)
+            {
+                scale.x = -Mathf.Abs(scale.x); // Flip to face left
+            }
+
+            transform.localScale = scale;
+        }
     }
 
     protected override void AttackPlayer()
@@ -38,6 +62,4 @@ public class MeteorBoss : Boss
             }
         }
     }
-
-
 }

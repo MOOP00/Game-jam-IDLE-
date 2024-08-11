@@ -17,12 +17,36 @@ public class MinigunBoss : Boss
         base.Start();
         fireRate = 0.15f;
         damage = 2;
-        bulletSpeed = 5f;
+        bulletSpeed = 7f;
     }
 
     protected override void AttackPlayer()
     {
         Debug.Log("MinigunBoss attacks the player!");
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+
+        // Check if the boss should flip based on the player's position
+        if (player != null)
+        {
+            Vector3 scale = transform.localScale;
+
+            // If the player is to the right of the boss and the boss is not already facing right
+            if (transform.position.x < player.position.x && scale.x < 0)
+            {
+                scale.x = Mathf.Abs(scale.x); // Flip to face right
+            }
+            // If the player is to the left of the boss and the boss is not already facing left
+            else if (transform.position.x > player.position.x && scale.x > 0)
+            {
+                scale.x = -Mathf.Abs(scale.x); // Flip to face left
+            }
+
+            transform.localScale = scale;
+        }
     }
 
     protected override void ShootPlayer()
@@ -35,9 +59,12 @@ public class MinigunBoss : Boss
 
         if (bulletPrefab != null)
         {
+            // Calculate the center position for bullet spawning (adjust as needed)
+            Vector3 bulletSpawnPosition = transform.position + new Vector3(0, 2.5f, 0); // Adjust the Y value based on your boss sprite
+
             for (int i = 0; i < bulletsPerBurst; i++)
             {
-                GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+                GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPosition, Quaternion.identity);
                 Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
                 rb.linearVelocity = (player.position - transform.position).normalized * bulletSpeed * damageMultiplier;
 
@@ -52,6 +79,7 @@ public class MinigunBoss : Boss
             }
         }
     }
+
 
     private IEnumerator Cooldown()
     {
