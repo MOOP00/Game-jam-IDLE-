@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 
 public class Chest : MonoBehaviour
 {
@@ -33,6 +34,9 @@ public class Chest : MonoBehaviour
     [Header("Req")]
     public bool Pressed;
     public bool invFull;
+
+    public TextMeshProUGUI NoMoney;
+    public int price;
 
     private int itemImageCounter = 0;
 
@@ -138,9 +142,16 @@ public class Chest : MonoBehaviour
 
     public void ToggleChest()
     {
-        if (Pressed && !invFull)
+        if (Pressed && !invFull && CoinManager.Instance.Coins >= price)
         {
+            CoinManager.Instance.SpendCoins(price);
+            CoinManager.Instance.UpdateCoinUI();
             ShowItem();
+        }
+        else
+        {
+            StartCoroutine(HideNoMoneyAfterDelay(2.0f));
+            NoMoney.gameObject.SetActive(true);
         }
     }
 
@@ -159,15 +170,20 @@ public class Chest : MonoBehaviour
 
     public void Collect()
     {
-        inventory.AddItem(itemData, 1);
-        Pressed = true;
-        HideItem();
+            inventory.AddItem(itemData, 1);
+            Pressed = true;
+            HideItem();
     }
 
     public void Drop()
     {
         Pressed = true;
         HideItem();
+    }
+    IEnumerator HideNoMoneyAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        NoMoney.gameObject.SetActive(false);
     }
 
     void ShowItem()

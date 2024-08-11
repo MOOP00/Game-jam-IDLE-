@@ -85,7 +85,7 @@ public class PlayerAutoShooting : MonoBehaviour
         if (currentSupportItem != null && currentDataItem.itemData != null)
         {
             // คำนวณความเสียหาย
-            damage = CalculateDamage(PlayerStatManager.Instance.AttackPower, currentSupportItem.rarity, currentDataItem.lvl);
+            damage = CalculateDamage(GameManager.Instance.AttackPower, currentSupportItem.rarity, currentDataItem.lvl);
             Debug.Log(damage);
         }
         else
