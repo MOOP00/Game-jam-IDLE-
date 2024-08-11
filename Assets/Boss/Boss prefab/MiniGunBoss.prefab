@@ -185,7 +185,7 @@ MonoBehaviour:
   waveIncrementHealth: 600
   damageMultiplier: 1.2
   damage: 1
-  healthBarPrefab: {fileID: 5775287755028678762, guid: 775f8110fcd9d5340b9f7726494df121, type: 3}
+  healthBarPrefab: {fileID: 3993236477473215754, guid: bc522d4174d49374bb7561594dec445f, type: 3}
   bulletsPerBurst: 1
   maxBulletsBeforeCooldown: 200
   cooldownDuration: 10
