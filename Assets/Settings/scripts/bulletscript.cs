@@ -6,7 +6,7 @@ public class bulletscript : MonoBehaviour
     private Camera mainCam;
     private Rigidbody2D rb;
     public float bulletSpeed = 20f;  // ความเร็วของกระสุน
-    public float damage = 25;  // ความเสียหายที่กระสุนสามารถทำได้
+    public float damage = 200;  // ความเสียหายที่กระสุนสามารถทำได้
 
     void Start()
     {
@@ -22,16 +22,17 @@ public class bulletscript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") || collision.CompareTag("Boss"))
         {
-            EnemyHealth enemyHealth = collision.GetComponent<EnemyHealth>();
+            Debug.Log("Bullet hit: " + collision.gameObject.name);
+            Enemys enemyHealth = collision.GetComponent<Enemys>();
 
             if (enemyHealth != null)
             {
-                enemyHealth.TakeDamage(damage);  // เรียกใช้ฟังก์ชัน TakeDamage ของศัตรู
+                enemyHealth.TakeDamage(damage);
             }
 
-            Destroy(gameObject);  // ทำลายกระสุนหลังจากทำดาเมจ
+            Destroy(gameObject);
         }
     }
 

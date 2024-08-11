@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 13
+  m_SortingOrder: 12
   m_Sprite: {fileID: 6735603206508882930, guid: 0c4815e5647b6af4fbab73e526012124, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
   waveIncrementHealth: 600
   damageMultiplier: 1.2
   damage: 1
-  healthBarPrefab: {fileID: 3993236477473215754, guid: bc522d4174d49374bb7561594dec445f, type: 3}
+  healthBarPrefab: {fileID: 5775287755028678762, guid: 775f8110fcd9d5340b9f7726494df121, type: 3}
   bulletsPerBurst: 1
   maxBulletsBeforeCooldown: 200
   cooldownDuration: 10
