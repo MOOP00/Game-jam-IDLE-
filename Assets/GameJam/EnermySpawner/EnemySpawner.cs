@@ -118,6 +118,13 @@ public class EnemySpawner : MonoBehaviour
         waveNumber++;
         Debug.Log($"Starting wave {waveNumber}");
 
+        // Find the PlayerHealth component and increase health per wave
+        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+        if (playerHealth != null)
+        {
+            playerHealth.IncreaseHealthPerWave(waveNumber);
+        }
+
         if (waveNumber % 10 == 0 && waveNumber != 0)
         {
             // Use BossManager to spawn a boss
@@ -134,6 +141,7 @@ public class EnemySpawner : MonoBehaviour
 
         UpdateUI();
     }
+
 
     private void SpawnBoss()
     {

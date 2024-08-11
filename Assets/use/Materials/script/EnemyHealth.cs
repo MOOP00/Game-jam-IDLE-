@@ -24,6 +24,7 @@ public class EnemyHealth : MonoBehaviour
     // ฟังก์ชันที่ทำให้ศัตรูตาย
     void Die()
     {
+        Debug.Log("Die");
         Destroy(gameObject);  // ทำลายวัตถุศัตรู
     }
 }
