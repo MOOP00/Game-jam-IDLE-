@@ -96,16 +96,14 @@ public class Weapon : MonoBehaviour
 
     public float GetDamage()
     {
-        // Return the calculated damage based on item data and level
         if (weaponSlots.Length > 0)
         {
             SO_Item item = weaponSlots[0].itemData;
             int stackLevel = weaponSlots[0].lvl;
 
-            // Calculate the damage based on item data
             if (item != null)
             {
-                float baseDamage = item.Damgae; // Ensure SO_Item has baseDamage
+                float baseDamage = item.Damgae;
                 float value = CalculateValue(item.rarity, stackLevel);
                 float valueRarity = CalculateValueRarity(item.rarity, stackLevel);
                 return Mathf.RoundToInt(baseDamage * (value + valueRarity * stackLevel));

@@ -33,8 +33,14 @@ public class shooting : MonoBehaviour
         Vector2 direction = mousePos - (Vector3)transform.position;
         float targetRotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
+        // ตรวจสอบทิศทางเพื่อปรับมุมหมุน
         float rotationSpeed = 100f;
-        float angle = Mathf.MoveTowardsAngle(transform.eulerAngles.z, targetRotation, rotationSpeed * Time.deltaTime);
+        float currentRotation = transform.eulerAngles.z;
+        if (direction.x < 0) // ด้านซ้าย
+        {
+            targetRotation += 180; // เพิ่ม 180 องศาเพื่อให้หันตรงข้าม
+        }
+        float angle = Mathf.MoveTowardsAngle(currentRotation, targetRotation, rotationSpeed * Time.deltaTime);
         transform.rotation = Quaternion.Euler(0, 0, angle);
 
         if (!canFire)
@@ -53,6 +59,7 @@ public class shooting : MonoBehaviour
             Shoot();
         }
     }
+
 
     Transform FindDeepChild(Transform parent, string childName)
     {

@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2018869261600421932}
   - component: {fileID: 2190345450399119723}
+  - component: {fileID: -1605442928499466724}
   m_Layer: 0
   m_Name: ShortGun3_0
   m_TagString: Untagged
@@ -58,7 +59,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.68181, y: 0.68181, z: 0.68181}
+  m_LocalScale: {x: 0.29009652, y: 0.29009652, z: 0.29009652}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 613195858696521720}
@@ -107,7 +108,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 8349515644195964672, guid: f6c9a0f57a1f66b4889b75077c585dfc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -119,3 +120,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-1605442928499466724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7780690414967647804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d03df1250abf5174793bf715f3dc7c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponType: 1

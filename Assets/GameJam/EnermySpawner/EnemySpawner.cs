@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour
 {
+    public static EnemySpawner Instance { get; private set; }
     public GameObject enemyPrefab; 
     public float spawnInterval = 2f; 
     public int enemiesPerSpawn = 5; 
@@ -11,7 +12,19 @@ public class EnemySpawner : MonoBehaviour
 
     public Transform minSpawn, maxSpawn;
     private Transform player; 
-    private bool canSpawn = true; 
+    private bool canSpawn = true;
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Start()
     {
