@@ -77,14 +77,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf080badd193344bb43195d0cafed61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  enemyPrefab: {fileID: 56128644427305584, guid: 3328deb31d9abe84ea8e98c157639bb2, type: 3}
-  spawnInterval: 2
-  enemiesPerSpawn: 1
-  toggleSpawnButton: {fileID: 0}
-  minSpawn: {fileID: 7340789026227099944}
-  maxSpawn: {fileID: 4704755447023694974}
-=======
   enemyPrefab: {fileID: 4848903901295326105, guid: 116b3fa6988fa384691e1b767a09d7cc, type: 3}
   spawnInterval: 3
   minEnemiesPerSpawn: 3
@@ -96,7 +88,6 @@ MonoBehaviour:
   waveText: {fileID: 0}
   enemiesLeftText: {fileID: 0}
   bossManager: {fileID: 0}
->>>>>>> RamanBack-up
 --- !u!1 &6160779319423059926
 GameObject:
   m_ObjectHideFlags: 0
