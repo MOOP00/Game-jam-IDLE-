@@ -38,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("_player").transform;
     }
 
     private void Update()

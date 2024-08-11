@@ -12,7 +12,7 @@ public class EnemyBase : MonoBehaviour
 
     protected virtual void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("_player").transform;
 
         waveIncrementHealth = health * 1.125f;
     }

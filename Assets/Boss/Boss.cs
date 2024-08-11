@@ -25,7 +25,7 @@ public abstract class Boss : MonoBehaviour
 
     protected virtual void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("_player").transform;
 
         // Instantiate the health bar prefab and set it as a child of the boss
         healthBarInstance = Instantiate(healthBarPrefab, transform.position, Quaternion.identity);
