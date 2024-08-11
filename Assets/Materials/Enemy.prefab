@@ -169,7 +169,6 @@ MonoBehaviour:
   bulletSpeed: 10
   bulletLifetime: 3
   fireRate: 1
-  health: 100
   waveIncrementHealth: 50
   pelletsPerShot: 5
   spreadAngle: 30

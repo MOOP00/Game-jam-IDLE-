@@ -9,7 +9,9 @@ public class shooting : MonoBehaviour
     public bool canFire;
     private float timer;
     public float timeBetweenFiring;
+    public float bulletSpeed = 20f;  // ตัวแปรสำหรับปรับความเร็วกระสุน
     public int damage = 25;  // เพิ่มความเสียหายให้กระสุน
+    public AudioClip gunSound;  // เสียงปืนที่ต้องการเล่น
 
     void Start()
     {
@@ -38,6 +40,8 @@ public class shooting : MonoBehaviour
             canFire = false;
             Shoot();
         }
+
+
     }
 
     void Shoot()
@@ -46,32 +50,14 @@ public class shooting : MonoBehaviour
         Rigidbody2D rb = newBullet.GetComponent<Rigidbody2D>();
 
         Vector2 direction = (mousePos - transform.position).normalized;
-        rb.linearVelocity = direction * 10f;  // กำหนดความเร็วกระสุน
+        rb.linearVelocity = direction * bulletSpeed;  // ใช้ตัวแปรความเร็วกระสุนที่สามารถปรับได้ใน Unity Inspector
 
-        // ใส่ Collider2D ให้ Prefab ของกระสุนที่คุณยิงเอง
+        bulletscript bulletScript = newBullet.AddComponent<bulletscript>();  // เพิ่ม bulletscript ให้กระสุนที่ยิง
+        bulletScript.damage = damage;  // กำหนดดาเมจให้กระสุน
+
+        // เล่นเสียงปืน
+        SoundManager.instance.PlaySFX(gunSound);
     }
-}
 
-public class Bullet : MonoBehaviour
-{
-    public int damage = 25;  // กำหนดความเสียหาย
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        // ตรวจสอบว่ากระสุนชนกับศัตรู
-        if (collision.CompareTag("Enemy"))
-        {
-            // ดึงข้อมูล EnemyHealth component ของศัตรู
-            EnemyHealth enemyHealth = collision.GetComponent<EnemyHealth>();
-
-            // ถ้าศัตรูมี EnemyHealth component ให้ทำดาเมจ
-            if (enemyHealth != null)
-            {
-                enemyHealth.TakeDamage(damage);  // เรียกใช้ฟังก์ชัน TakeDamage ของศัตรู
-            }
-
-            // ทำลายกระสุนหลังจากทำดาเมจ
-            Destroy(gameObject);
-        }
-    }
 }

@@ -2,28 +2,35 @@
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int maxHealth = 100;  // เลือดสูงสุดของศัตรู
-    private int currentHealth;  // เลือดปัจจุบันของศัตรู
+    public int maxHealth = 100;
+    private int currentHealth;
 
     void Start()
     {
-        currentHealth = maxHealth;  // กำหนดค่าเริ่มต้นของเลือด
+        currentHealth = maxHealth;
     }
 
-    // ฟังก์ชันนี้จะถูกเรียกใช้เมื่อศัตรูโดนกระสุน
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;  // ลดค่าเลือดตามความเสียหายที่ได้รับ
+        currentHealth -= damage;
 
         if (currentHealth <= 0)
         {
-            Die();  // ถ้าเลือดหมด ให้เรียกใช้ฟังก์ชัน Die()
+            Die();
         }
     }
 
-    // ฟังก์ชันที่ทำให้ศัตรูตาย
+    // ฟังก์ชันเพื่อให้สคริปต์อื่นสามารถเข้าถึง currentHealth ได้
+    public int GetCurrentHealth()
+    {
+        return currentHealth;
+    }
+
     void Die()
     {
-        Destroy(gameObject);  // ทำลายวัตถุศัตรู
+        // แจ้ง GameManager ว่าศัตรูตัวนี้ถูกกำจัด
+        GameManager.instance.OnEnemyDeath();
+
+        Destroy(gameObject);
     }
 }

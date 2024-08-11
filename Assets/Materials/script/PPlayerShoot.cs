@@ -8,13 +8,14 @@ public class PlayerAutoShooting : MonoBehaviour
     public float fireRate = 1f;  // อัตราการยิง
     private float nextTimeToFire = 0f;  // เวลาที่จะยิงครั้งต่อไป
 
+    public AudioClip gunSound;  // เพิ่ม AudioClip สำหรับเสียงปืน
+
     void Update()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject nearestEnemy = null;
         float shortestDistance = Mathf.Infinity;
 
-        // ค้นหาศัตรูที่อยู่ใกล้ที่สุด
         foreach (GameObject enemy in enemies)
         {
             float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
@@ -26,7 +27,6 @@ public class PlayerAutoShooting : MonoBehaviour
             }
         }
 
-        // ยิงกระสุนไปยังศัตรูที่อยู่ใกล้ที่สุด
         if (nearestEnemy != null && Time.time >= nextTimeToFire)
         {
             Shoot(nearestEnemy);
@@ -43,6 +43,9 @@ public class PlayerAutoShooting : MonoBehaviour
         {
             homingBullet.SetTarget(enemy.transform);  // กำหนดเป้าหมายให้กระสุนติดตาม
         }
+
+        // เล่นเสียงปืน
+        SoundManager.instance.PlaySFX(gunSound);
     }
 
     void OnDrawGizmosSelected()
