@@ -12,6 +12,8 @@ public class shooting : MonoBehaviour
     public float bulletSpeed = 20f;
     private Weapon weaponMain;
 
+    public AudioClip audioo;
+
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -81,6 +83,7 @@ public class shooting : MonoBehaviour
 
     void Shoot()
     {
+        SoundManager.instance.PlaySFX(audioo);
         GameObject newBullet = Instantiate(bullet, bulletTransform.position, bulletTransform.rotation);
         bulletscript bulletScript = newBullet.GetComponent<bulletscript>();
 

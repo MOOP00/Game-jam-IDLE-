@@ -13,6 +13,7 @@ public class PlayerAutoShooting : MonoBehaviour
     public int selectedSlotIndex = 0; // ตัวแปรเพื่อระบุดัชนีของ supportSlots ที่ต้องการดึงค่า
     public SO_Item currentSupportItem; // ไอเท็มที่ใช้ในการยิง
     public WeaponSupport.Data_Item currentDataItem; // เพื่อเข้าถึง stacklvl
+    public AudioClip audios;
 
     private GameObject currentBullet; // ตัวแปรเพื่อเก็บการอ้างอิงไปยัง bullet ที่สร้างขึ้น
 
@@ -189,6 +190,12 @@ public class PlayerAutoShooting : MonoBehaviour
 
             // กำหนดเป้าหมายให้กับกระสุน
             bulletScript.SetTarget(target.transform);
+
+            // Play the shooting sound
+            if (SoundManager.instance != null)
+            {
+                SoundManager.instance.PlaySFX(audios);
+            }
         }
         else
         {
@@ -197,5 +204,6 @@ public class PlayerAutoShooting : MonoBehaviour
             currentBullet = null;
         }
     }
+
 
 }

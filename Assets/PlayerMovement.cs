@@ -5,11 +5,15 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f; // Movement speed
     private bool facingRight = true; // Track if player is facing right
     private Camera mainCamera; // Reference to the main camera
+    private Animator animator; // Reference to the animator
 
     void Start()
     {
         // Get the main camera
         mainCamera = Camera.main;
+
+        // Get the Animator component
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -44,8 +48,21 @@ public class PlayerMovement : MonoBehaviour
         // Move the character in the specified direction
         transform.Translate(moveDirection, Space.World);
 
+        // Update the animator with movement information
+        UpdateAnimator(moveDirection);
+
         // Flip the character based on the mouse position
         FlipCharacter();
+    }
+
+    // Update the animator's speed parameter based on movement
+    private void UpdateAnimator(Vector3 moveDirection)
+    {
+        // Calculate movement magnitude
+        float speed = moveDirection.magnitude;
+
+        // Set the animator's speed parameter
+        animator.SetFloat("Speed", speed);
     }
 
     // Flip the player based on the mouse position
