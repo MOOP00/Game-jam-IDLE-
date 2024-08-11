@@ -4,8 +4,13 @@
 TagManager:
   serializedVersion: 3
   tags:
+<<<<<<< HEAD
   - _player
   - Enemy
+=======
+  - Enemy
+  - Boss
+>>>>>>> TestForTai
   layers:
   - Default
   - TransparentFX
@@ -43,8 +48,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+<<<<<<< HEAD
   - name: Bullet
     uniqueID: 1524020887
     locked: 0
+=======
+>>>>>>> TestForTai
   m_RenderingLayers:
   - Default
