@@ -181,7 +181,7 @@ MonoBehaviour:
   attackCooldown: 3
   shootingRange: 60
   bulletPrefab: {fileID: 0}
-  bulletSpeed: 10
+  bulletSpeed: 1
   bulletLifetime: 5
   fireRate: 3
   health: 1000

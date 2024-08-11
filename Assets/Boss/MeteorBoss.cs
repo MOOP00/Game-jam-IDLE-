@@ -10,6 +10,7 @@ public class MeteorBoss : Boss
         base.Start();
         fireRate = 8f;
         damage = 50;
+        bulletSpeed = 1f;
     }
 
     protected override void AttackPlayer()

@@ -14,8 +14,10 @@ public class LaserBoss : Boss
     protected override void Start()
     {
         base.Start();
-        fireRate = 1f;
+        fireRate = 1.5f;
         damage = 10;
+        bulletSpeed = 5f;
+        bulletLifetime = 10f;
     }
 
     protected override void AttackPlayer()

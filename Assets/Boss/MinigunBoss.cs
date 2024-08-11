@@ -5,7 +5,7 @@ using System.Collections;
 public class MinigunBoss : Boss
 {
     public int bulletsPerBurst = 1;
-    public int maxBulletsBeforeCooldown = 300; // Maximum bullets before entering cooldown
+    public int maxBulletsBeforeCooldown = 200; // Maximum bullets before entering cooldown
     public float cooldownDuration = 10f; // Cooldown duration in seconds
 
     private int bulletsFired = 0; // Counter for bullets fired
@@ -15,8 +15,9 @@ public class MinigunBoss : Boss
     protected override void Start()
     {
         base.Start();
-        fireRate = 0.1f;
+        fireRate = 0.15f;
         damage = 2;
+        bulletSpeed = 5f;
     }
 
     protected override void AttackPlayer()

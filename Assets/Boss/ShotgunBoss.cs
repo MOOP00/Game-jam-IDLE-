@@ -14,8 +14,9 @@ public class ShotgunBoss : Boss
     protected override void Start()
     {
         base.Start();
-        fireRate = 0.5f;
+        fireRate = 1.5f;
         damage = 5;
+        bulletSpeed = 5f;
     }
 
     protected override void AttackPlayer()

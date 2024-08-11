@@ -98,6 +98,7 @@ public abstract class Boss : MonoBehaviour
         if (health <= 0)
         {
             Die();
+            
         }
     }
 
@@ -106,5 +107,6 @@ public abstract class Boss : MonoBehaviour
         // Handle boss death
         Destroy(gameObject);
         Debug.Log("Boss has been defeated!");
+        EnemySpawner.Instance.BossDefeated();
     }
 }

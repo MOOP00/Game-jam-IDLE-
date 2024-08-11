@@ -4,8 +4,15 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 10f; // Speed of the bullet
     public float damage = 10f; // Damage dealt by the bullet
+    public float lifetime = 5f; // Lifetime of the bullet in seconds
 
     private Vector2 moveDirection;
+
+    private void Start()
+    {
+        // Destroy the bullet after 'lifetime' seconds
+        Destroy(gameObject, lifetime);
+    }
 
     public void SetMoveDirection(Vector2 direction)
     {
@@ -39,8 +46,8 @@ public class Bullet : MonoBehaviour
             return;
         }
 
-        // Optionally, destroy the bullet if it hits a wall
-        if (collision.CompareTag("Wall"))
+        // Destroy the bullet if it hits an object with the "Enemy" or "Boss" tag
+        if (collision.CompareTag("Enemy") || collision.CompareTag("Boss"))
         {
             Destroy(gameObject);
         }
