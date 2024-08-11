@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/GameJam/Bullet 1.prefab.meta
 guid: d295b7e9d2a832a40b08aec3ea38d11b
+========
+guid: 6796c2a8a792a1942905b0bd94c059a0
+>>>>>>>> RamanBack-up:Assets/GameJam/AlienBoss.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/GameJam/Enemy.prefab.meta
 guid: b3874247e75ea5442aaf1a08cfdae024
+========
+guid: ae49f0b0ab22be74d89942b75485b230
+>>>>>>>> RamanBack-up:Assets/GameJam/MeteorBoss.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

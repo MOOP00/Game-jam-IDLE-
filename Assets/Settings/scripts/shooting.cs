@@ -78,7 +78,7 @@ public class shooting : MonoBehaviour
         Rigidbody2D rb = newBullet.GetComponent<Rigidbody2D>();
 
         Vector2 direction = (mousePos - transform.position).normalized;
-        rb.velocity = direction * bulletSpeed;
+        rb.linearVelocity = direction * bulletSpeed;
 
         bulletscript bulletScript = newBullet.GetComponent<bulletscript>();
         if (bulletScript != null)
