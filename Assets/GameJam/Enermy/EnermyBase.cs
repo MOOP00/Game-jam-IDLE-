@@ -32,8 +32,8 @@ public class EnemyBase : MonoBehaviour
 
     public void IncreaseDifficulty(int waveNumber)
     {
-        float additionalHealth = waveIncrementHealth * EnemySpawner.Instance.waveNumber;
-        health += additionalHealth; // Remove cast to int for float values
+        //float additionalHealth = waveIncrementHealth * EnemySpawner.Instance.waveNumber;
+        //health += additionalHealth; // Remove cast to int for float values
         damageMultiplier += waveNumber * 2f;
     }
 
@@ -49,6 +49,6 @@ public class EnemyBase : MonoBehaviour
     protected virtual void Die()
     {
         Destroy(gameObject);
-        FindObjectOfType<EnemySpawner>().EnemyDefeated();
+        //FindObjectOfType<EnemySpawner>().EnemyDefeated();
     }
 }
