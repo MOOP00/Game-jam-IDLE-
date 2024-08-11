@@ -3,7 +3,7 @@
 public class EnemyBase : MonoBehaviour
 {
     public float speed = 2f; 
-    public int health = 100; 
+    public float health = 100; 
     public float despawnDistance = 13f; 
 
     protected Transform player; 
@@ -37,7 +37,7 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
-    public virtual void TakeDamage(int damage)
+    public virtual void TakeDamage(float damage)
     {
         health -= damage;
         if (health <= 0)

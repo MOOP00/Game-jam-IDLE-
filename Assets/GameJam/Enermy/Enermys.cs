@@ -8,9 +8,6 @@ public class Enemys : EnemyBase
         speed = 5f;
     }
 
-<<<<<<< HEAD
-    public override void TakeDamage(int damage)
-=======
     protected override void Update()
     {
         base.Update();
@@ -36,7 +33,6 @@ public class Enemys : EnemyBase
 
     }
     public override void TakeDamage(float damage)
->>>>>>> RamanBack-up
     {
         base.TakeDamage(damage);
     }
