@@ -1709,7 +1709,71 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cowboy_idle_0: 3384274789675597452
+      cowboy_idle_1: 171471688320774207
+      cowboy_idle_10: 4235843139744813926
+      cowboy_idle_11: 1384236537913384140
+      cowboy_idle_12: 8468379969764019457
+      cowboy_idle_13: 6230706692183729148
+      cowboy_idle_14: 6376134789173750408
+      cowboy_idle_15: 4040431022801158795
+      cowboy_idle_16: 4581465102084427444
+      cowboy_idle_17: -8076594771143746526
+      cowboy_idle_18: -5253202445977638910
+      cowboy_idle_19: 3246189434622853099
+      cowboy_idle_2: -6240321624046797775
+      cowboy_idle_20: 4594134681810998064
+      cowboy_idle_21: -8393940259307266523
+      cowboy_idle_22: 3910777645965210659
+      cowboy_idle_23: -5074069010380730317
+      cowboy_idle_24: -3425773468368083168
+      cowboy_idle_25: -284081247051994652
+      cowboy_idle_26: -1299253293967444965
+      cowboy_idle_27: -1155852428690491955
+      cowboy_idle_28: 5576579896786837475
+      cowboy_idle_29: -2426029059288404407
+      cowboy_idle_3: -5618877567862586761
+      cowboy_idle_30: 405704942691552693
+      cowboy_idle_31: 586554885949118184
+      cowboy_idle_32: 1344845183982841407
+      cowboy_idle_33: -328199932821357798
+      cowboy_idle_34: 2885684466542824207
+      cowboy_idle_35: 6591785993316750755
+      cowboy_idle_36: -9092408521142696331
+      cowboy_idle_37: -8531750139841094176
+      cowboy_idle_38: -7579278723132612850
+      cowboy_idle_39: 435045796211225833
+      cowboy_idle_4: -6510908393837188050
+      cowboy_idle_40: 9001004397274430504
+      cowboy_idle_41: 1407122927161047104
+      cowboy_idle_42: -8978676715709756159
+      cowboy_idle_43: 5403183011504855313
+      cowboy_idle_44: -4531012719403474280
+      cowboy_idle_45: -907075505410195156
+      cowboy_idle_46: -3797055409151316125
+      cowboy_idle_47: 7067088768948574878
+      cowboy_idle_48: -4956454107951605175
+      cowboy_idle_49: 3068035627406292620
+      cowboy_idle_5: -1512504467594044562
+      cowboy_idle_50: 2728337065501619735
+      cowboy_idle_51: -1346087913887700180
+      cowboy_idle_52: 5891070993363470521
+      cowboy_idle_53: -6623413924023400631
+      cowboy_idle_54: 319228557087576559
+      cowboy_idle_55: 6901839503876255751
+      cowboy_idle_56: -1238132545757391899
+      cowboy_idle_57: 7414549994097907625
+      cowboy_idle_58: 8097706271279971675
+      cowboy_idle_59: 9150424321354549559
+      cowboy_idle_6: 5776012555835014794
+      cowboy_idle_60: 1637193712149974925
+      cowboy_idle_61: -5669280875609090000
+      cowboy_idle_62: -1390103987534782507
+      cowboy_idle_63: 4526932744406728758
+      cowboy_idle_7: -7969634358557619701
+      cowboy_idle_8: 7852927692854267895
+      cowboy_idle_9: -9127960644042708161
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

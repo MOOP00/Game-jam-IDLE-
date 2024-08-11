@@ -17,7 +17,7 @@ public class ShotgunBoss : Boss
     protected override void Start()
     {
         base.Start();
-        fireRate = 1.3f;
+        fireRate = 2.6f;
         damage = 5;
         bulletSpeed = 5f;
 
@@ -28,6 +28,25 @@ public class ShotgunBoss : Boss
     protected override void Update()
     {
         base.Update();
+
+        // Check if the boss should flip based on the player's position
+        if (player != null)
+        {
+            Vector3 scale = transform.localScale;
+
+            // If the player is to the left of the boss and the boss is not already flipped
+            if (transform.position.x > player.position.x && scale.x > 0)
+            {
+                scale.x = -Mathf.Abs(scale.x); // Flip to face left
+            }
+            // If the player is to the right of the boss and the boss is flipped
+            else if (transform.position.x < player.position.x && scale.x < 0)
+            {
+                scale.x = Mathf.Abs(scale.x); // Flip to face right
+            }
+
+            transform.localScale = scale;
+        }
 
         // Update animation states based on conditions
         if (isCoolingDown)
@@ -46,6 +65,7 @@ public class ShotgunBoss : Boss
             animator.SetBool("IsIdle", true);
         }
     }
+
 
     protected override void AttackPlayer()
     {

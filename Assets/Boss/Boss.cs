@@ -12,7 +12,7 @@ public abstract class Boss : MonoBehaviour
     public float bulletSpeed = 10f;
     public float bulletLifetime = 5f;
     public float fireRate = 3f;
-    public float health = 1000f;
+    public float health = 100f;
     public float waveIncrementHealth = 500 * 1.2f;
     public float damageMultiplier = 1.2f;
     public int damage = 1;

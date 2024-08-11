@@ -1109,7 +1109,47 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cowboy_walk_0: -7640817542500813000
+      cowboy_walk_1: 796421033453959325
+      cowboy_walk_10: -7061518948191551916
+      cowboy_walk_11: 5609649776421541327
+      cowboy_walk_12: -3166057460042730391
+      cowboy_walk_13: 1380106782513157224
+      cowboy_walk_14: 6690134320875440027
+      cowboy_walk_15: -4742291873745634120
+      cowboy_walk_16: 1517969255933532556
+      cowboy_walk_17: -2842921468255659913
+      cowboy_walk_18: 6546355364538571470
+      cowboy_walk_19: 8587268352053830818
+      cowboy_walk_2: 5995725031450076436
+      cowboy_walk_20: -8642263134594184197
+      cowboy_walk_21: 4677842551626931395
+      cowboy_walk_22: -1261267196270162901
+      cowboy_walk_23: 8789359862201159021
+      cowboy_walk_24: 6259010816405426760
+      cowboy_walk_25: -8855559532199681549
+      cowboy_walk_26: -5888235041310011894
+      cowboy_walk_27: 2541431861069375617
+      cowboy_walk_28: -4403721403802888605
+      cowboy_walk_29: 5881546361510549236
+      cowboy_walk_3: 5888484380567276416
+      cowboy_walk_30: -6828640279482709166
+      cowboy_walk_31: 3266543262819748617
+      cowboy_walk_32: -5887625936547452615
+      cowboy_walk_33: 5434308514770209445
+      cowboy_walk_34: -2244424695704642898
+      cowboy_walk_35: -7636280995032255499
+      cowboy_walk_36: -770771674481112413
+      cowboy_walk_37: 8255007499308883174
+      cowboy_walk_38: -7344550138623768185
+      cowboy_walk_39: 1544112515461111663
+      cowboy_walk_4: 7610573328360955355
+      cowboy_walk_5: -3911489568475856414
+      cowboy_walk_6: -125518497090987889
+      cowboy_walk_7: -5014097693369417481
+      cowboy_walk_8: -555617831835205589
+      cowboy_walk_9: -5672127469200906702
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
