@@ -75,44 +75,17 @@ public class shooting : MonoBehaviour
     void Shoot()
     {
         GameObject newBullet = Instantiate(bullet, bulletTransform.position, bulletTransform.rotation);
-        Rigidbody2D rb = newBullet.GetComponent<Rigidbody2D>();
-
-        Vector2 direction = (mousePos - transform.position).normalized;
-        rb.velocity = direction * bulletSpeed;
-
         bulletscript bulletScript = newBullet.GetComponent<bulletscript>();
+
         if (bulletScript != null)
         {
             bulletScript.damage = weaponMain.GetDamage();  // Set damage based on the weapon
+            bulletScript.bulletSpeed = bulletSpeed;  // Set bullet speed if needed
         }
         else
         {
-            Debug.LogWarning("Bullet script not found on the bullet prefab.");
+            Debug.LogWarning("bulletscript not found on the bullet prefab.");
             Destroy(newBullet);
-        }
-    }
-}
-
-public class Bullet : MonoBehaviour
-{
-    public int damage;
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        // ตรวจสอบว่ากระสุนชนกับศัตรู
-        if (collision.CompareTag("Enermy"))
-        {
-            // ดึงข้อมูล EnemyHealth component ของศัตรู
-            EnemyHealth enemyHealth = collision.GetComponent<EnemyHealth>();
-
-            // ถ้าศัตรูมี EnemyHealth component ให้ทำดาเมจ
-            if (enemyHealth != null)
-            {
-                enemyHealth.TakeDamage(damage);  // เรียกใช้ฟังก์ชัน TakeDamage ของศัตรู
-            }
-
-            // ทำลายกระสุนหลังจากทำดาเมจ
-            Destroy(gameObject);
         }
     }
 }

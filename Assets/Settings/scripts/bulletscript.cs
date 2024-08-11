@@ -7,11 +7,9 @@ public class bulletscript : MonoBehaviour
     private Rigidbody2D rb;
     public float bulletSpeed = 20f;  // ความเร็วของกระสุน
     public float damage = 25;  // ความเสียหายที่กระสุนสามารถทำได้
-    public float lifetime = 7f;
 
     void Start()
     {
-        Destroy(gameObject, lifetime);
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody2D>();
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
@@ -35,6 +33,10 @@ public class bulletscript : MonoBehaviour
 
             Destroy(gameObject);  // ทำลายกระสุนหลังจากทำดาเมจ
         }
-        // เพิ่มโค้ดสำหรับ Boss หากต้องการ
+    }
+
+    void Update()
+    {
+        // อาจจะเพิ่มฟังก์ชันอื่นๆ ตามต้องการ
     }
 }
