@@ -242,8 +242,6 @@ MonoBehaviour:
   canFire: 1
   timeBetweenFiring: 0.3
   bulletSpeed: 1000
-  damage: 20
-  weaponSupport: {fileID: 0}
 --- !u!1 &232127116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,8 +1050,14 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7182854335337895957, guid: d295b7e9d2a832a40b08aec3ea38d11b, type: 3}
   shootingRange: 10
   fireRate: 1
-  fire_Point: {fileID: 0}
+  firePoint: {fileID: 0}
+  damage: 0
   weaponSupport: {fileID: 718451031}
+  selectedSlotIndex: 0
+  currentSupportItem: {fileID: 0}
+  currentDataItem:
+    itemData: {fileID: 0}
+    lvl: 0
 --- !u!1 &487552398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1768,6 +1772,8 @@ GameObject:
   - component: {fileID: 718451028}
   - component: {fileID: 718451031}
   - component: {fileID: 718451032}
+  - component: {fileID: 718451034}
+  - component: {fileID: 718451033}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1916,6 +1922,49 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &718451033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718451027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89eeaf3486f7a3b40a17884be2e0ca7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+--- !u!114 &718451034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718451027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &772155363
 GameObject:
   m_ObjectHideFlags: 0
@@ -2147,11 +2196,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9e6707112c49b498957bcdb9e375d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 7182854335337895957, guid: d295b7e9d2a832a40b08aec3ea38d11b, type: 3}
   shootingRange: 10
   fireRate: 1
-  fire_Point: {fileID: 0}
+  firePoint: {fileID: 0}
+  damage: 0
   weaponSupport: {fileID: 0}
+  selectedSlotIndex: 1
+  currentSupportItem: {fileID: 0}
+  currentDataItem:
+    itemData: {fileID: 0}
+    lvl: 0
 --- !u!1 &808534727
 GameObject:
   m_ObjectHideFlags: 0
@@ -2272,11 +2327,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9e6707112c49b498957bcdb9e375d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 7182854335337895957, guid: d295b7e9d2a832a40b08aec3ea38d11b, type: 3}
   shootingRange: 10
   fireRate: 1
-  fire_Point: {fileID: 0}
+  firePoint: {fileID: 0}
+  damage: 0
   weaponSupport: {fileID: 0}
+  selectedSlotIndex: 3
+  currentSupportItem: {fileID: 0}
+  currentDataItem:
+    itemData: {fileID: 0}
+    lvl: 0
 --- !u!1 &966832659
 GameObject:
   m_ObjectHideFlags: 0
@@ -2534,11 +2595,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9e6707112c49b498957bcdb9e375d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 7182854335337895957, guid: d295b7e9d2a832a40b08aec3ea38d11b, type: 3}
   shootingRange: 10
   fireRate: 1
-  fire_Point: {fileID: 0}
+  firePoint: {fileID: 0}
+  damage: 0
   weaponSupport: {fileID: 0}
+  selectedSlotIndex: 2
+  currentSupportItem: {fileID: 0}
+  currentDataItem:
+    itemData: {fileID: 0}
+    lvl: 0
 --- !u!1 &1173547663
 GameObject:
   m_ObjectHideFlags: 0
@@ -3192,6 +3259,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1528613074}
   m_CullTransparentMesh: 1
+--- !u!1 &1548438551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1548438553}
+  - component: {fileID: 1548438552}
+  m_Layer: 0
+  m_Name: Game_Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1548438552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548438551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf839ed644628a419771ea0756a0e85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 0
+  MaxHealth: 0
+  AttackPower: 0
+  Defense: 0
+  Experience: 0
+  Level: 0
+--- !u!4 &1548438553
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548438551}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -38.35858, y: 258.50833, z: -0.06302001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1551379451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11928,3 +12045,4 @@ SceneRoots:
   - {fileID: 492568181}
   - {fileID: 6939424040612634299}
   - {fileID: 718451030}
+  - {fileID: 1548438553}

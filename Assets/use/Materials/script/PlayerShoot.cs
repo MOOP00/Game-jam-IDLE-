@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
-public class shooting : MonoBehaviour
+public class Shooting : MonoBehaviour
 {
     private Camera mainCam;
     private Vector3 mousePos;
-    public GameObject bullet;  // Prefab ของกระสุน
+    public GameObject bulletPrefab;  // Prefab ของกระสุน
     public Transform bulletTransform;  // ตำแหน่งที่กระสุนจะถูกยิงออกมา
     public bool canFire;
     private float timer;
@@ -30,6 +30,7 @@ public class shooting : MonoBehaviour
         }
 
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = 0;  // Ensure z is 0 for 2D game
         Vector2 direction = mousePos - (Vector3)transform.position;
         float targetRotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
@@ -74,45 +75,31 @@ public class shooting : MonoBehaviour
 
     void Shoot()
     {
-        GameObject newBullet = Instantiate(bullet, bulletTransform.position, bulletTransform.rotation);
+        GameObject newBullet = Instantiate(bulletPrefab, bulletTransform.position, bulletTransform.rotation);
         Rigidbody2D rb = newBullet.GetComponent<Rigidbody2D>();
 
-        Vector2 direction = (mousePos - transform.position).normalized;
-        rb.velocity = direction * bulletSpeed;
-
-        bulletscript bulletScript = newBullet.GetComponent<bulletscript>();
-        if (bulletScript != null)
+        if (rb != null)
         {
-            bulletScript.damage = weaponMain.GetDamage();  // Set damage based on the weapon
+            Vector2 direction = (mousePos - transform.position).normalized;
+            rb.velocity = direction * bulletSpeed;
+
+            bulletscript bulletScript = newBullet.GetComponent<bulletscript>();
+            if (bulletScript != null)
+            {
+                bulletScript.damage = weaponMain.GetDamage();  // Set damage based on the weapon
+            }
+            else
+            {
+                Debug.LogWarning("Bullet script not found on the bullet prefab.");
+                Destroy(newBullet);
+            }
         }
         else
         {
-            Debug.LogWarning("Bullet script not found on the bullet prefab.");
+            Debug.LogWarning("Rigidbody2D component not found on the bullet prefab.");
             Destroy(newBullet);
         }
     }
 }
 
-public class Bullet : MonoBehaviour
-{
-    public int damage;
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        // ตรวจสอบว่ากระสุนชนกับศัตรู
-        if (collision.CompareTag("Enermy"))
-        {
-            // ดึงข้อมูล EnemyHealth component ของศัตรู
-            EnemyHealth enemyHealth = collision.GetComponent<EnemyHealth>();
-
-            // ถ้าศัตรูมี EnemyHealth component ให้ทำดาเมจ
-            if (enemyHealth != null)
-            {
-                enemyHealth.TakeDamage(damage);  // เรียกใช้ฟังก์ชัน TakeDamage ของศัตรู
-            }
-
-            // ทำลายกระสุนหลังจากทำดาเมจ
-            Destroy(gameObject);
-        }
-    }
-}

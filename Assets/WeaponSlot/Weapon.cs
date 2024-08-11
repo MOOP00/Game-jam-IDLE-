@@ -16,17 +16,16 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    public Data_Item[] weaponSlots = new Data_Item[1]; // Ensure this array size fits your use case
+    public Data_Item[] weaponSlots = new Data_Item[1];
 
     [Header("Main_Slot UI")]
-    public Image mainSlotIcon; // Reference to the Image component in the UI
+    public Image mainSlotIcon;
 
     [Header("Main_Weapon_Transform")]
     public Transform mainSlotTransform;
 
     private void Start()
     {
-        // Initialize UI icon visibility
         UpdateMainSlotIcon();
     }
 
@@ -44,9 +43,8 @@ public class Weapon : MonoBehaviour
 
     public void EquipWeapon(SO_Item weaponItem, int lvl)
     {
-        int slotIndex = 0; // Assuming single slot for simplicity, adjust as needed
+        int slotIndex = 0;
 
-        // Clear the existing weapon if any
         if (weaponSlots[slotIndex].itemData != null)
         {
             Transform oldWeaponTransform = mainSlotTransform.Find(weaponSlots[slotIndex].itemData.itemName);
@@ -56,34 +54,22 @@ public class Weapon : MonoBehaviour
             }
         }
 
-        // Equip the new weapon
         weaponSlots[slotIndex] = new Data_Item(lvl, weaponItem);
-
-        // Clear the old weapon GameObject
         ClearOldWeaponGameObject();
 
         if (weaponItem.gamePrefab != null)
         {
-            // Instantiate the new weapon prefab
             GameObject weaponInstance = Instantiate(weaponItem.gamePrefab, mainSlotTransform.position, mainSlotTransform.rotation);
-
-            // Set the new weapon as a child of mainSlotTransform
             weaponInstance.transform.SetParent(mainSlotTransform, false);
-
-            // Ensure the weapon is positioned correctly within the parent
             weaponInstance.transform.localPosition = Vector3.zero;
-
-            // Set the name of the weapon instance to match the item name
             weaponInstance.name = weaponItem.itemName;
         }
 
-        // Update the UI icon
         UpdateMainSlotIcon();
     }
 
     private void ClearOldWeaponGameObject()
     {
-        // Destroy all children of the mainSlotTransform
         foreach (Transform child in mainSlotTransform)
         {
             Destroy(child.gameObject);
@@ -98,13 +84,59 @@ public class Weapon : MonoBehaviour
 
             if (currentItem != null)
             {
-                mainSlotIcon.sprite = currentItem.icon; // Update the icon with the currently equipped weapon's icon
-                mainSlotIcon.enabled = true; // Ensure the icon is visible
+                mainSlotIcon.sprite = currentItem.icon;
+                mainSlotIcon.enabled = true;
             }
             else
             {
-                mainSlotIcon.enabled = false; // Hide the icon if no weapon is equipped
+                mainSlotIcon.enabled = false;
             }
+        }
+    }
+
+    public float GetDamage()
+    {
+        // Return the calculated damage based on item data and level
+        if (weaponSlots.Length > 0)
+        {
+            SO_Item item = weaponSlots[0].itemData;
+            int stackLevel = weaponSlots[0].lvl;
+
+            // Calculate the damage based on item data
+            if (item != null)
+            {
+                float baseDamage = item.Damgae; // Ensure SO_Item has baseDamage
+                float value = CalculateValue(item.rarity, stackLevel);
+                float valueRarity = CalculateValueRarity(item.rarity, stackLevel);
+                return Mathf.RoundToInt(baseDamage * (value + valueRarity * stackLevel));
+            }
+        }
+        return 0;
+    }
+
+    private float CalculateValue(Rarity rarity, int stacklvl)
+    {
+        switch (rarity)
+        {
+            case Rarity.Common: return 1.25f;
+            case Rarity.Uncommon: return 2f;
+            case Rarity.Rare: return 5f;
+            case Rarity.Epic: return 10f;
+            case Rarity.Legendary: return 50f;
+            default: return 0f;
+        }
+    }
+
+    private float CalculateValueRarity(Rarity rarity, int stacklvl)
+    {
+        switch (rarity)
+        {
+            case Rarity.Common: return 0.25f;
+            case Rarity.Uncommon: return 0.5f;
+            case Rarity.Rare: return 1.25f;
+            case Rarity.Epic: return 2.5f;
+            case Rarity.Legendary: return 2f;
+            default: return 0f;
         }
     }
 }

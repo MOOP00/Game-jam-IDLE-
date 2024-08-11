@@ -1,11 +1,8 @@
 ﻿using UnityEngine;
 
-public class PlayerStatManagers : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    // สร้าง instance สำหรับใช้ใน singleton pattern
-    public static PlayerStatManagers Instance { get; private set; }
-
-    // สถิติของผู้เล่น
+    public static GameManager Instance { get; private set; }
     public int Health;
     public int MaxHealth;
     public int AttackPower;
@@ -14,20 +11,18 @@ public class PlayerStatManagers : MonoBehaviour
     public int Level;
 
     private void Awake()
-    {
-        // ตรวจสอบว่ามี instance ที่มีอยู่แล้วหรือไม่
-        if (Instance == null)
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject); // ทำให้ gameObject ไม่ถูกทำลายเมื่อโหลดฉากใหม่
-            InitializeStats(); // เริ่มต้นค่าต่างๆ
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+                InitializeStats();
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
-        else
-        {
-            Destroy(gameObject); // ทำลาย instance ซ้ำ
-        }
-    }
-
     private void InitializeStats()
     {
         // กำหนดค่าเริ่มต้นให้กับสถิติของผู้เล่น
@@ -99,3 +94,4 @@ public class PlayerStatManagers : MonoBehaviour
         // เพิ่มเติม: ใส่การจัดการเมื่อผู้เล่นตาย เช่น การโหลดฉากใหม่หรือรีเซ็ตเกม
     }
 }
+ 

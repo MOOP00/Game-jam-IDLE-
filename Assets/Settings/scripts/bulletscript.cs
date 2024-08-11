@@ -6,7 +6,7 @@ public class bulletscript : MonoBehaviour
     private Camera mainCam;
     private Rigidbody2D rb;
     public float bulletSpeed = 20f;  // ความเร็วของกระสุน
-    public int damage = 25;  // ความเสียหายที่กระสุนสามารถทำได้
+    public float damage = 25;  // ความเสียหายที่กระสุนสามารถทำได้
     public float lifetime = 7f;
 
     void Start()
@@ -17,14 +17,14 @@ public class bulletscript : MonoBehaviour
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
         Vector3 direction = mousePos - transform.position;
         Vector3 rotation = transform.position - mousePos;
-        rb.linearVelocity = new Vector2(direction.x, direction.y).normalized * bulletSpeed;  // ใช้ bulletSpeed เพื่อปรับความเร็วกระสุน
+        rb.velocity = new Vector2(direction.x, direction.y).normalized * bulletSpeed;  // ใช้ bulletSpeed เพื่อปรับความเร็วกระสุน
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enermy"))
+        if (collision.CompareTag("Enemy"))
         {
             EnemyHealth enemyHealth = collision.GetComponent<EnemyHealth>();
 
@@ -35,9 +35,6 @@ public class bulletscript : MonoBehaviour
 
             Destroy(gameObject);  // ทำลายกระสุนหลังจากทำดาเมจ
         }
-        if (collision.CompareTag("Boss"))
-        {
-            
-        }
+        // เพิ่มโค้ดสำหรับ Boss หากต้องการ
     }
 }
