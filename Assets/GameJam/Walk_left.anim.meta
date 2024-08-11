@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/GameJam/Walk_left.anim.meta
 guid: b6de3277ece857a41af7429039e47463
+========
+guid: 622203116bee1464ba86a41b7e112bc2
+>>>>>>>> RamanBack-up:Assets/GameJam/sage_attack.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000

@@ -81,7 +81,7 @@ public class Shooting : MonoBehaviour
         if (rb != null)
         {
             Vector2 direction = (mousePos - transform.position).normalized;
-            rb.velocity = direction * bulletSpeed;
+            rb.linearVelocity = direction * bulletSpeed;
 
             bulletscript bulletScript = newBullet.GetComponent<bulletscript>();
             if (bulletScript != null)
