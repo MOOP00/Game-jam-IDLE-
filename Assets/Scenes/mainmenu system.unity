@@ -301,7 +301,7 @@ MonoBehaviour:
   volumeSlider: {fileID: 1424540420}
   defaultVolume: 1
   comfirmationPrompt: {fileID: 548715032}
-  _newGamelevel: start scene
+  _newGamelevel: cutscene
 --- !u!4 &290227249
 Transform:
   m_ObjectHideFlags: 0
