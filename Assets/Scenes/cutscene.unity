@@ -145,7 +145,7 @@ RectTransform:
   m_GameObject: {fileID: 263444664}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6233, y: 1.0478616, z: 1}
+  m_LocalScale: {x: 1.6435913, y: 1.0478616, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2047792706}
@@ -416,7 +416,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084644808}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 2c3efca90b22d1846b8653528c7217fa, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: beb93731b9160334a9ae58a60601068c, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -470,6 +470,7 @@ GameObject:
   - component: {fileID: 1133074514}
   - component: {fileID: 1133074513}
   - component: {fileID: 1133074512}
+  - component: {fileID: 1133074515}
   m_Layer: 0
   m_Name: menucontoller
   m_TagString: Untagged
@@ -518,6 +519,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1133074515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133074511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd0217e734bb9ff4b8ecdd0ce44a76cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 1084644809}
+  rawImage: {fileID: 1533279098}
+  renderTexture: {fileID: 8400000, guid: 51b51cb068e5b084f8260f6de2e3a846, type: 2}
+  nextSceneName: save
 --- !u!1 &1343242653
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,7 +728,7 @@ GameObject:
   - component: {fileID: 1533279099}
   - component: {fileID: 1533279098}
   m_Layer: 5
-  m_Name: RawImage
+  m_Name: screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -799,7 +816,7 @@ RectTransform:
   m_GameObject: {fileID: 2047792705}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.8933423, y: 3.954686, z: 2.282252}
+  m_LocalScale: {x: 2.080486, y: 2.8436556, z: 1.6410756}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 263444665}
@@ -807,7 +824,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 685, y: 416}
+  m_AnchoredPosition: {x: 768, y: 440}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2047792707
