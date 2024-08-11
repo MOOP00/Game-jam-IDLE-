@@ -21,6 +21,9 @@ public class Weapon : MonoBehaviour
     [Header("Main_Slot UI")]
     public Image mainSlotIcon; // Reference to the Image component in the UI
 
+    [Header("Main_Weapon_Transform")]
+    public Transform mainSlotTransform;
+
     private void Start()
     {
         // Initialize UI icon visibility
@@ -46,25 +49,45 @@ public class Weapon : MonoBehaviour
         // Clear the existing weapon if any
         if (weaponSlots[slotIndex].itemData != null)
         {
-            GameObject oldWeaponInstance = transform.GetChild(slotIndex).gameObject;
-            if (oldWeaponInstance != null)
+            Transform oldWeaponTransform = mainSlotTransform.Find(weaponSlots[slotIndex].itemData.itemName);
+            if (oldWeaponTransform != null)
             {
-                Destroy(oldWeaponInstance);
+                Destroy(oldWeaponTransform.gameObject);
             }
         }
 
         // Equip the new weapon
         weaponSlots[slotIndex] = new Data_Item(lvl, weaponItem);
 
+        // Clear the old weapon GameObject
+        ClearOldWeaponGameObject();
+
         if (weaponItem.gamePrefab != null)
         {
-            GameObject weaponInstance = Instantiate(weaponItem.gamePrefab, transform.position, transform.rotation);
-            weaponInstance.transform.parent = transform;
-            weaponInstance.transform.localPosition = Vector3.zero; // Ensure it is properly positioned
+            // Instantiate the new weapon prefab
+            GameObject weaponInstance = Instantiate(weaponItem.gamePrefab, mainSlotTransform.position, mainSlotTransform.rotation);
+
+            // Set the new weapon as a child of mainSlotTransform
+            weaponInstance.transform.SetParent(mainSlotTransform, false);
+
+            // Ensure the weapon is positioned correctly within the parent
+            weaponInstance.transform.localPosition = Vector3.zero;
+
+            // Set the name of the weapon instance to match the item name
+            weaponInstance.name = weaponItem.itemName;
         }
 
         // Update the UI icon
         UpdateMainSlotIcon();
+    }
+
+    private void ClearOldWeaponGameObject()
+    {
+        // Destroy all children of the mainSlotTransform
+        foreach (Transform child in mainSlotTransform)
+        {
+            Destroy(child.gameObject);
+        }
     }
 
     private void UpdateMainSlotIcon()

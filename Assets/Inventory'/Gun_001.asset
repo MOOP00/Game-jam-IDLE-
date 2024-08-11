@@ -20,4 +20,4 @@ MonoBehaviour:
   MaxLevel: 0
   rarity: 0
   type: 0
-  gamePrefab: {fileID: 0}
+  gamePrefab: {fileID: 6746331745592251879, guid: 6000ad805edcaba43b6ca156967b7b22, type: 3}

@@ -25,6 +25,15 @@ public class WeaponSupport : MonoBehaviour
     public Image supportSlotIcon3;
     public Image supportSlotIcon4;
 
+    [Header("Transform Points")]
+    public Transform transformPoint1;
+    public Transform transformPoint2;
+    public Transform transformPoint3;
+    public Transform transformPoint4;
+
+    [Header("Prefabs")]
+    public GameObject[] itemPrefabs; // Array of prefabs corresponding to each slot
+
     private void Start()
     {
         foreach (Image image in new Image[] { supportSlotIcon1, supportSlotIcon2, supportSlotIcon3, supportSlotIcon4 })
@@ -44,37 +53,92 @@ public class WeaponSupport : MonoBehaviour
             return;
         }
 
-        // ลบไอเท็มที่มี id ตรงกันจากช่องทั้งหมดก่อน
+        // Remove existing item if it matches the current item ID
         for (int i = 0; i < supportSlots.Length; i++)
         {
             if (supportSlots[i].itemData != null && supportSlots[i].itemData.id == item.id)
             {
-                supportSlots[i] = new Data_Item(0, null); // เคลียร์ข้อมูลในช่องนี้
-                ClearSlotIcon(i); // เคลียร์ไอคอน
+                supportSlots[i] = new Data_Item(0, null);
+                ClearSlotIcon(i);
+                RemoveExistingPrefab(i);
             }
         }
 
-        // ตั้งค่าไอเท็มใหม่ในช่องที่ระบุ
+        // Assign new item or find an empty slot
         if (slotIndex >= 0 && slotIndex < supportSlots.Length)
         {
             supportSlots[slotIndex] = new Data_Item(stacklvl, item);
+            PlaceItemPrefab(item, slotIndex);
         }
         else
         {
-            // หาก slotIndex ไม่ถูกต้อง, หาช่องว่างที่ว่าง
             for (int i = 0; i < supportSlots.Length; i++)
             {
                 if (supportSlots[i].itemData == null)
                 {
                     supportSlots[i] = new Data_Item(stacklvl, item);
+                    PlaceItemPrefab(item, i);
                     break;
                 }
             }
         }
 
-        UpdateSupportSlots(); // อัปเดตไอคอน
+        UpdateSupportSlots();
     }
 
+    public void RemoveExistingPrefab(int slotIndex)
+    {
+        Transform targetTransform = GetTransformForSlot(slotIndex);
+        if (targetTransform != null && targetTransform.childCount > 0)
+        {
+            // Remove the last child as an example; modify as needed to match your use case
+            GameObject lastChild = targetTransform.GetChild(targetTransform.childCount - 1).gameObject;
+            Destroy(lastChild);
+        }
+    }
+
+    public void PlaceItemPrefab(SO_Item item, int slotIndex)
+    {
+        if (item.gamePrefab != null)
+        {
+            Transform targetTransform = GetTransformForSlot(slotIndex);
+            if (targetTransform != null)
+            {
+                GameObject prefabInstance = Instantiate(item.gamePrefab, targetTransform.position, targetTransform.rotation);
+                prefabInstance.transform.SetParent(targetTransform, false); // Set as child without using parent's local scale
+                prefabInstance.transform.localPosition = Vector3.zero;
+
+                if (targetTransform.childCount > 1)
+                {
+                    Destroy(targetTransform.GetChild(0).gameObject);
+                }
+            }
+        }
+    }
+
+    public Transform GetTransformForSlot(int slotIndex)
+    {
+        switch (slotIndex)
+        {
+            case 0: return transformPoint1;
+            case 1: return transformPoint2;
+            case 2: return transformPoint3;
+            case 3: return transformPoint4;
+            default: return null;
+        }
+    }
+
+    private void ClearItemPrefab(int slotIndex)
+    {
+        Transform targetTransform = GetTransformForSlot(slotIndex);
+        if (targetTransform != null)
+        {
+            foreach (Transform child in targetTransform)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+    }
 
     public void UpdateSupportSlots()
     {
@@ -93,7 +157,7 @@ public class WeaponSupport : MonoBehaviour
         }
         else
         {
-            ClearSlotIcon(index); // Clear image only, not the entire component
+            ClearSlotIcon(index);
         }
     }
 
@@ -103,13 +167,13 @@ public class WeaponSupport : MonoBehaviour
         {
             if (supportSlots[i].itemData != null && supportSlots[i].itemData.id == item.id)
             {
-                supportSlots[i] = new Data_Item(0, null); // Clear slot data
-                ClearSlotIcon(i); // Clear image only
+                supportSlots[i] = new Data_Item(0, null);
+                ClearSlotIcon(i);
+                ClearItemPrefab(i);
                 break;
             }
         }
     }
-
 
     public void ClearSlotIcon(int index)
     {
@@ -134,8 +198,8 @@ public class WeaponSupport : MonoBehaviour
     {
         if (icon != null)
         {
-            icon.sprite = null; // Remove image
-            icon.enabled = false; // Optionally, hide the icon
+            icon.sprite = null;
+            icon.enabled = false;
         }
     }
 }

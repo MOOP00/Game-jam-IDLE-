@@ -185,7 +185,11 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             }
         }
     }
-
+    public int GetSlotIndex()
+    {
+        // คุณอาจจะต้องกำหนดวิธีการหา index ของ slot ในกรณีนี้
+        return transform.GetSiblingIndex(); // สมมติว่าคุณใช้ sibling index เป็นช่องของ slot
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Right)
@@ -250,13 +254,44 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 {
                     if (weaponSupport.supportSlots[i].itemData != null && weaponSupport.supportSlots[i].itemData.id == overwrittenItem.id)
                     {
-                        weaponSupport.supportSlots[i] = new WeaponSupport.Data_Item(0, null); // เคลียร์ข้อมูลในช่อง
-                        weaponSupport.ClearSupportSlot(overwrittenItem); // เคลียร์ไอคอนในช่อง
+                        weaponSupport.supportSlots[i] = new WeaponSupport.Data_Item(0, null); // Clear data in slot
+                        weaponSupport.ClearSupportSlot(overwrittenItem); // Clear icon in slot
                         break;
                     }
                 }
 
                 weaponSupport.UpdateSupportSlots();
+            }
+        }
+
+        // Ensure no gamePrefab is created during merge
+        RemoveAllGamePrefabs(); // Clear all prefabs after merging
+                                // Do not call UpdateItemPrefab() during merge
+    }
+
+    private void RemoveAllGamePrefabs()
+    {
+        // Remove all existing gamePrefabs
+        foreach (Transform child in transform)
+        {
+            if (child.gameObject.CompareTag("GamePrefab")) // Use a tag or other method to identify prefabs
+            {
+                Destroy(child.gameObject);
+            }
+        }
+    }
+    private void UpdateItemPrefab()
+    {
+        // Instantiate new prefab if needed
+        if (item.gamePrefab != null)
+        {
+            // Get the Transform for this slot and instantiate the new prefab
+            Transform targetTransform = weaponSupport.GetTransformForSlot(GetSlotIndex());
+            if (targetTransform != null)
+            {
+                GameObject prefabInstance = Instantiate(item.gamePrefab, targetTransform.position, targetTransform.rotation);
+                prefabInstance.transform.SetParent(targetTransform, false); // Set parent without affecting local scale
+                prefabInstance.tag = "GamePrefab"; // Optional: Tag the prefab for identification
             }
         }
     }
