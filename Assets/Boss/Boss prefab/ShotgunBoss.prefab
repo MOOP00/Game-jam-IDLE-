@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7876074257489062292}
   - component: {fileID: 1028574445605218781}
   - component: {fileID: 3558622049127430935}
+  - component: {fileID: 2106592500454633045}
   m_Layer: 0
   m_Name: ShotgunBoss
   m_TagString: Untagged
@@ -190,3 +191,25 @@ MonoBehaviour:
   spreadAngle: 90
   shotsBeforeCooldown: 75
   cooldownDuration: 0
+--- !u!95 &2106592500454633045
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9138728225824330698}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 69c918abcd8122246a24124ec9809068, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
