@@ -107,6 +107,6 @@ public abstract class Boss : MonoBehaviour
         // Handle boss death
         Destroy(gameObject);
         Debug.Log("Boss has been defeated!");
-        //EnemySpawner.Instance.BossDefeated();
+        EnemySpawner.Instance.BossDefeated();
     }
 }
