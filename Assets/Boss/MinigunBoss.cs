@@ -18,6 +18,7 @@ public class MinigunBoss : Boss
         fireRate = 0.15f;
         damage = 2;
         bulletSpeed = 7f;
+        bulletLifetime = 10f;
     }
 
     protected override void AttackPlayer()
