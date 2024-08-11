@@ -49,6 +49,6 @@ public class EnemyBase : MonoBehaviour
     protected virtual void Die()
     {
         Destroy(gameObject);
-        //FindObjectOfType<EnemySpawner>().EnemyDefeated();
+        EnemySpawner.Instance.EnemyDefeated();
     }
 }
