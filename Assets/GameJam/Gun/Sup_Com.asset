@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c318c376001a2940b94e2eef1ca3036, type: 3}
+  m_Name: Sup_Com
+  m_EditorClassIdentifier: 
+  icon: {fileID: -2531285182302349349, guid: 52c199fd9d168e947ae339c379a1f0d7, type: 3}
+  id: 11
+  itemName: Sup_Com
+  description: 
+  Damgae: 10
+  MaxLevel: 5
+  rarity: 0
+  type: 1
+  gamePrefab: {fileID: 3654201674922206137, guid: d9dc8cd8f27828c4699facde5662b389, type: 3}

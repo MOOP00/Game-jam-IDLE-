@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c318c376001a2940b94e2eef1ca3036, type: 3}
+  m_Name: Sup_Epic
+  m_EditorClassIdentifier: 
+  icon: {fileID: 5922853257993404859, guid: 7bd755455a16201409b020c81d3fcf85, type: 3}
+  id: 14
+  itemName: Sup_Epic
+  description: 
+  Damgae: 70
+  MaxLevel: 5
+  rarity: 3
+  type: 1
+  gamePrefab: {fileID: 2736509835058691569, guid: 32bd43aa20b7ed04b93f43154208f25b, type: 3}

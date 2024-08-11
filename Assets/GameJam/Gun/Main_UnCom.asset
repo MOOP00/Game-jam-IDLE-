@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c318c376001a2940b94e2eef1ca3036, type: 3}
+  m_Name: Main_UnCom
+  m_EditorClassIdentifier: 
+  icon: {fileID: 8789892895513213276, guid: 9a19359f9bdf74942a0c90faafad5e47, type: 3}
+  id: 22
+  itemName: Main_UnCom
+  description: 
+  Damgae: 30
+  MaxLevel: 5
+  rarity: 1
+  type: 0
+  gamePrefab: {fileID: 3215197415081241032, guid: 83d7a5b19a5ac914d862f7daf17c00da, type: 3}

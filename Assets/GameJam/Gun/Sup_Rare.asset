@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c318c376001a2940b94e2eef1ca3036, type: 3}
+  m_Name: Sup_Rare
+  m_EditorClassIdentifier: 
+  icon: {fileID: 3622600948478761034, guid: 236f191fffa2fe942bcf2bb365f9de31, type: 3}
+  id: 13
+  itemName: Sup_Rare
+  description: 
+  Damgae: 50
+  MaxLevel: 5
+  rarity: 2
+  type: 1
+  gamePrefab: {fileID: 5871457084044408655, guid: 847f5ca5fced10d4893a205d4d436416, type: 3}

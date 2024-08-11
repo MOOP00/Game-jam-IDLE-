@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c318c376001a2940b94e2eef1ca3036, type: 3}
+  m_Name: Main_Epic
+  m_EditorClassIdentifier: 
+  icon: {fileID: 4826330085856488736, guid: 93e304ba2c7d443438da00dfd9ff5c20, type: 3}
+  id: 24
+  itemName: Main
+  description: 
+  Damgae: 120
+  MaxLevel: 5
+  rarity: 3
+  type: 0
+  gamePrefab: {fileID: 618644965657851456, guid: eed7456371fbb324aadf4d65fac46113, type: 3}
