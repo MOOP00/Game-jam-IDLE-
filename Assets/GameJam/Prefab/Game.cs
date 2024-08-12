@@ -1,32 +1,46 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 public class Game : MonoBehaviour
 {
-    public static Game Instance { get; private set; }
-    public int Health;
-    public int MaxHealth;
+    public static Game _instance;
+    public float Health;
+    public float MaxHealth;
     public int AttackPower;
     public int Defense;
     public int Experience;
     public int Level;
 
+    [Header("UI")]
+    public TextMeshProUGUI hp;
+
     private void Awake()
     {
-        if (Instance == null)
+        if (_instance == null)
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-            InitializeStats();
+            _instance = this;
         }
         else
         {
             Destroy(gameObject);
         }
     }
+    private void Start()
+    {
+        InitializeStats();
+        UpdateHealthUI();
+    }
+    private void UpdateHealthUI()
+    {
+        if (hp != null)
+        {
+            hp.text = $"HP: {Health}/{MaxHealth}"; // Update the text with the current health
+        }
+    }
     private void InitializeStats()
     {
         // กำหนดค่าเริ่มต้นให้กับสถิติของผู้เล่น
-        MaxHealth = 100;
+        MaxHealth = 300;
         Health = MaxHealth;
         AttackPower = 10;
         Defense = 5;
@@ -59,32 +73,37 @@ public class Game : MonoBehaviour
     // ฟังก์ชันสำหรับการเพิ่มระดับ
     private void LevelUp()
     {
-        MaxHealth += 20;
+        MaxHealth += 50;
         Health = MaxHealth;
         AttackPower += 5;
         Defense += 3;
+        UpdateHealthUI();
 
         Debug.Log("Level Up! Current Level: " + Level);
     }
 
     // ฟังก์ชันสำหรับการลดค่า HP
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
-        int actualDamage = Mathf.Max(damage - Defense, 0); // คำนวณความเสียหายที่ลดลงจาก Defense
+        float actualDamage = Mathf.Max(damage - Defense, 0); // คำนวณความเสียหายที่ลดลงจาก Defense
+        Debug.Log(actualDamage);
         Health -= actualDamage;
         Health = Mathf.Max(Health, 0); // ไม่ให้ค่าต่ำกว่า 0
+        UpdateHealthUI();
 
         if (Health <= 0)
         {
+            UpdateHealthUI();
             Die();
         }
     }
 
     // ฟังก์ชันสำหรับการรักษา HP
-    public void Heal(int amount)
+    public void Heal(float amount)
     {
         Health += amount;
         Health = Mathf.Min(Health, MaxHealth); // ไม่ให้ค่าเกิน MaxHealth
+        UpdateHealthUI();
     }
 
     // ฟังก์ชันเมื่อผู้เล่นตาย

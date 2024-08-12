@@ -106,7 +106,7 @@ public class Weapon : MonoBehaviour
                 float baseDamage = item.Damgae;
                 float value = CalculateValue(item.rarity, stackLevel);
                 float valueRarity = CalculateValueRarity(item.rarity, stackLevel);
-                return Mathf.RoundToInt(baseDamage * (value + valueRarity * stackLevel));
+                return Mathf.RoundToInt(Game._instance.AttackPower + (baseDamage * (value * (valueRarity * stackLevel))));
             }
         }
         return 0;

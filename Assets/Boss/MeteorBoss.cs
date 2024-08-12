@@ -40,7 +40,7 @@ public class MeteorBoss : Boss
 
     protected override void AttackPlayer()
     {
-        Debug.Log("MeteorBoss attacks the player!");
+        base.AttackPlayer();
     }
 
     protected override void ShootPlayer()
