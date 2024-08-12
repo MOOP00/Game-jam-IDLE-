@@ -15,7 +15,7 @@ public abstract class Boss : MonoBehaviour
     public float health = 100f;
     public float waveIncrementHealth = 500 * 1.2f;
     public float damageMultiplier = 1.2f;
-    public int damage = 1;
+    public float damage;
     public GameObject healthBarPrefab; // Assign this in the Inspector
     private GameObject healthBarInstance;
     private Slider healthSlider;
@@ -43,19 +43,13 @@ public abstract class Boss : MonoBehaviour
         RectTransform healthBarRect = healthBarInstance.GetComponent<RectTransform>();
         healthBarRect.anchoredPosition = new Vector2(0, 1.5f); // Adjust this value to place it above the boss
     }
-
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("_player"))
         {
-            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(damage * damageMultiplier); // Use the existing damage variable
-            }
+            AttackPlayer();
         }
     }
-
     protected virtual void Update()
     {
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
@@ -96,11 +90,7 @@ public abstract class Boss : MonoBehaviour
 
     protected virtual void AttackPlayer()
     {
-        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
-        if (playerHealth != null)
-        {
-            playerHealth.TakeDamage(damage * damageMultiplier);
-        }
+        Game._instance.TakeDamage(damage * damageMultiplier);
     }
 
     protected abstract void ShootPlayer();

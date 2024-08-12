@@ -16,14 +16,14 @@ public class MinigunBoss : Boss
     {
         base.Start();
         fireRate = 0.15f;
-        damage = 2;
+        damage = 10;
         bulletSpeed = 7f;
         bulletLifetime = 10f;
     }
 
     protected override void AttackPlayer()
     {
-        Debug.Log("MinigunBoss attacks the player!");
+       base.AttackPlayer();
     }
 
     protected override void Update()

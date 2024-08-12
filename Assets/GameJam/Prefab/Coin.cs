@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    public static Coin Instance { get; private set; }
+    public static Coin Instance;
     public int Coins; // จำนวนเหรียญที่ผู้เล่นมี
 
     public GameObject Pannel;
@@ -16,13 +16,15 @@ public class Coin : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            UpdateCoinUI();
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
+    }
+    private void Start()
+    {
+        UpdateCoinUI();
     }
     private void Update()
     {

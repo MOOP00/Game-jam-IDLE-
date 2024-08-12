@@ -5,6 +5,7 @@ public class Enemys : EnemyBase
     protected override void Start()
     {
         base.Start();
+        damage = 5;
         speed = 5f;
     }
 
