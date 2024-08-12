@@ -47,7 +47,6 @@ public class EnemyBase : MonoBehaviour
 
     protected virtual void AttackPlayer()
     {
-        Debug.Log(damage);
         Game._instance.TakeDamage(damage * damageMultiplier);
     }
 
@@ -69,7 +68,7 @@ public class EnemyBase : MonoBehaviour
 
     protected virtual void Die()
     {
-
+        Game._instance.GainExperience(10);
         Destroy(gameObject);
         EnemySpawner.Instance.EnemyDefeated();
     }

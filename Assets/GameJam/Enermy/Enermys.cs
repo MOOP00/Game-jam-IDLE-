@@ -32,14 +32,5 @@ public class Enemys : EnemyBase
             transform.localScale = scale;
         }
     }
-
-    public override void TakeDamage(float damage)
-    {
-        base.TakeDamage(damage);
-    }
-
-    protected override void Die()
-    {
-        base.Die();
-    }
 }
+

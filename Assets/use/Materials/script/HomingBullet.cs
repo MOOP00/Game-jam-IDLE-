@@ -38,14 +38,24 @@ public class HomingBullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy") || collision.CompareTag("Boss"))
+        if (collision.CompareTag("Enemy"))
         {
-            Debug.Log("Bullet hit: " + collision.gameObject.name);
             Enemys enemyHealth = collision.GetComponent<Enemys>();
 
             if (enemyHealth != null)
             {
                 enemyHealth.TakeDamage(damage);
+            }
+
+            Destroy(gameObject);
+        }
+        if (collision.CompareTag("Boss"))
+        {
+            Boss boss = collision.GetComponent<Boss>();
+
+            if (boss != null)
+            {
+                boss.TakeDamage(damage);
             }
 
             Destroy(gameObject);

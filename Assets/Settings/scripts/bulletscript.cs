@@ -22,9 +22,8 @@ public class bulletscript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy") || collision.CompareTag("Boss"))
+        if (collision.CompareTag("Enemy"))
         {
-            Debug.Log("Bullet hit: " + collision.gameObject.name);
             Enemys enemyHealth = collision.GetComponent<Enemys>();
 
             if (enemyHealth != null)
@@ -34,10 +33,16 @@ public class bulletscript : MonoBehaviour
 
             Destroy(gameObject);
         }
-    }
+        if (collision.CompareTag("Boss"))
+        {
+            Boss boss = collision.GetComponent<Boss>();
 
-    void Update()
-    {
-        // อาจจะเพิ่มฟังก์ชันอื่นๆ ตามต้องการ
+            if (boss != null)
+            {
+                boss.TakeDamage(damage);
+            }
+
+            Destroy(gameObject);
+        }
     }
 }
