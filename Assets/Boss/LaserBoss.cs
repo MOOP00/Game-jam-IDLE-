@@ -16,7 +16,7 @@ public class LaserBoss : Boss
         base.Start();
         fireRate = 1.5f;
         damage = 10;
-        bulletSpeed = 5f;
+        bulletSpeed = 1f;
         bulletLifetime = 10f;
     }
 

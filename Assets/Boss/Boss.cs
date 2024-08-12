@@ -79,9 +79,14 @@ public abstract class Boss : MonoBehaviour
         // Update the health bar position above the boss
         if (healthBarInstance != null)
         {
-            healthBarInstance.transform.position = transform.position + new Vector3(0, 2f, 0); // Adjust Y offset if needed
+            Vector3 healthBarPosition = transform.position + new Vector3(0, 2f, 0); // Adjust Y offset if needed
+            healthBarInstance.transform.position = healthBarPosition;
+
+            // Reset the rotation to avoid it following the boss's rotation
+            healthBarInstance.transform.rotation = Quaternion.identity;
         }
     }
+
 
     protected void MoveTowardsPlayer()
     {
@@ -109,6 +114,7 @@ public abstract class Boss : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        Debug.Log("Boss took damage: " + damage);
         health -= damage;
         if (healthSlider != null)
         {
@@ -120,6 +126,7 @@ public abstract class Boss : MonoBehaviour
             Die();
         }
     }
+
 
     void Die()
     {

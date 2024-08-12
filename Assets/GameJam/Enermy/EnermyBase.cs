@@ -64,6 +64,8 @@ public class EnemyBase : MonoBehaviour
 
     public void IncreaseDifficulty(int waveNumber)
     {
+        float additionalHealth = health * 1.2f * waveNumber;
+        health += (int)additionalHealth;
         damageMultiplier += waveNumber * 2f;
     }
 

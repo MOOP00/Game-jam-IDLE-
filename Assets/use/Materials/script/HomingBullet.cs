@@ -4,7 +4,7 @@ public class HomingBullet : MonoBehaviour
 {
     public float speed = 5f;
     public float rotateSpeed = 200f;
-    public float damage = 25; // Default damage
+    public float damage = 200f; // Default damage
     private Transform target;
 
     // Method to set the damage value from another script
@@ -38,8 +38,9 @@ public class HomingBullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") || collision.CompareTag("Boss"))
         {
+            Debug.Log("Bullet hit: " + collision.gameObject.name);
             Enemys enemyHealth = collision.GetComponent<Enemys>();
 
             if (enemyHealth != null)
@@ -50,4 +51,5 @@ public class HomingBullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 }
