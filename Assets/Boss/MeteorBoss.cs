@@ -59,7 +59,7 @@ public class MeteorBoss : Boss
                 Rigidbody2D rb = meteor.GetComponent<Rigidbody2D>();
                 if (rb != null)
                 {
-                    rb.velocity = Vector2.down * bulletSpeed; // ใช้ bulletSpeed ที่ลดลง
+                    rb.linearVelocity = Vector2.down * bulletSpeed; // ใช้ bulletSpeed ที่ลดลง
                 }
 
                 Destroy(meteor, bulletLifetime);
