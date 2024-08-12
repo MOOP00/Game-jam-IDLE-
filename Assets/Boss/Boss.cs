@@ -121,6 +121,7 @@ public abstract class Boss : MonoBehaviour
     void Die()
     {
         Game._instance.GainExperience(1000);
+        Coin.Instance.AddCoins(500);
         Destroy(gameObject);
         Debug.Log("Boss has been defeated!");
         EnemySpawner.Instance.BossDefeated();

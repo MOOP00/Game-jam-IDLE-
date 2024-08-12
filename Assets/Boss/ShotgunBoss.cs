@@ -19,7 +19,7 @@ public class ShotgunBoss : Boss
         base.Start();
         fireRate = 1.275f;
         damage = 10;
-        bulletSpeed = 6f;
+        bulletSpeed = 1f;
 
         // Get the Animator component
         animator = GetComponent<Animator>();

@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
@@ -7,7 +8,6 @@ public class Game : MonoBehaviour
     public float Health;
     public float MaxHealth;
     public int AttackPower;
-    public int Defense;
     public int Experience;
     public int Level;
 
@@ -43,7 +43,6 @@ public class Game : MonoBehaviour
         MaxHealth = 200;
         Health = MaxHealth;
         AttackPower = 10;
-        Defense = 5;
         Experience = 0;
         Level = 1;
     }
@@ -76,16 +75,13 @@ public class Game : MonoBehaviour
         MaxHealth += 50;
         Health = MaxHealth;
         AttackPower += 5;
-        Defense += 3;
         UpdateHealthUI();
     }
 
     // ฟังก์ชันสำหรับการลดค่า HP
     public void TakeDamage(float damage)
     {
-        float actualDamage = Mathf.Max(damage - Defense, 0); // คำนวณความเสียหายที่ลดลงจาก Defense
-        Debug.Log(actualDamage);
-        Health -= actualDamage;
+        Health -= damage;
         Health = Mathf.Max(Health, 0); // ไม่ให้ค่าต่ำกว่า 0
         UpdateHealthUI();
 
@@ -107,7 +103,10 @@ public class Game : MonoBehaviour
     // ฟังก์ชันเมื่อผู้เล่นตาย
     private void Die()
     {
-        Debug.Log("Player Died!");
-        // เพิ่มเติม: ใส่การจัดการเมื่อผู้เล่นตาย เช่น การโหลดฉากใหม่หรือรีเซ็ตเกม
+        RestartGame();
+    }
+    private void RestartGame()
+    {
+        SceneManager.LoadScene(3);
     }
 }

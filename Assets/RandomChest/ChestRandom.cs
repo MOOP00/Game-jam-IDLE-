@@ -31,6 +31,9 @@ public class Chest : MonoBehaviour
     public TextMeshProUGUI rarity;
     public TextMeshProUGUI Type;
 
+    [Header("UI_Main")]
+    public TextMeshProUGUI Main;
+
     [Header("Req")]
     public bool Pressed;
     public bool invFull;
@@ -146,6 +149,7 @@ public class Chest : MonoBehaviour
         {
             if(Coin.Instance.Coins >= price)
             {
+                Main.gameObject.SetActive(false);
                 Coin.Instance.SpendCoins(price);
                 ShowItem();
             }
@@ -178,6 +182,7 @@ public class Chest : MonoBehaviour
 
     public void Collect()
     {
+        Main.gameObject.SetActive(true);
         inventory.AddItem(itemData, 1);
         Pressed = true;
         HideItem();
@@ -185,6 +190,7 @@ public class Chest : MonoBehaviour
 
     public void Drop()
     {
+        Main.gameObject.SetActive(true);
         Pressed = true;
         HideItem();
     }

@@ -17,7 +17,7 @@ public class MinigunBoss : Boss
         base.Start();
         fireRate = 0.15f;
         damage = 10;
-        bulletSpeed = 7f;
+        bulletSpeed = 1f;
         bulletLifetime = 10f;
     }
 

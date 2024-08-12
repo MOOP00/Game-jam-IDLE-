@@ -69,6 +69,7 @@ public class EnemyBase : MonoBehaviour
     protected virtual void Die()
     {
         Game._instance.GainExperience(10);
+        Coin.Instance.AddCoins(10);
         Destroy(gameObject);
         EnemySpawner.Instance.EnemyDefeated();
     }

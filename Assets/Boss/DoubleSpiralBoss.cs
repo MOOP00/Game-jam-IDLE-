@@ -20,7 +20,7 @@ public class DoubleSpiralBoss : Boss
         base.Start();
         fireRate = 1.5f; // Adjust fire rate for this boss
         damage = 10; // Set custom damage value for this boss
-        bulletSpeed = 5f;
+        bulletSpeed = 1f;
         bulletLifetime = 10f;
     }
 

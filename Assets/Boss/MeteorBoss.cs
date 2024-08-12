@@ -11,7 +11,7 @@ public class MeteorBoss : Boss
         fireRate = 8f;
         damage = 50;
         bulletLifetime = 10f;
-        bulletSpeed = 7f;
+        bulletSpeed = 1f;
     }
 
     protected override void Update()
