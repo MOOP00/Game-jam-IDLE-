@@ -142,15 +142,19 @@ public class Chest : MonoBehaviour
 
     public void ToggleChest()
     {
-        if (Pressed && !invFull && Coin.Instance.Coins >= price)
+        if (Pressed && !invFull)
         {
-            Coin.Instance.SpendCoins(price);
-            ShowItem();
-        }
-        else
-        {
-            NoMoney.gameObject.SetActive(true) ;
-            StartCoroutine(HideNoMoneyAfterDelay(2.0f));
+            if(Coin.Instance.Coins >= price)
+            {
+                Coin.Instance.SpendCoins(price);
+                ShowItem();
+            }
+            else
+            {
+                NoMoney.gameObject.SetActive(true);
+                StartCoroutine(HideNoMoneyAfterDelay(2.0f));
+            }
+            
         }
     }
     IEnumerator HideNoMoneyAfterDelay(float delay)
