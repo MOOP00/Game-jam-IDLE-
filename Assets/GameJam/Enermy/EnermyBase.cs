@@ -6,7 +6,7 @@ public class EnemyBase : MonoBehaviour
     public float health = 30f;
     public float waveIncrementHealth;
     public float damageMultiplier = 1.2f;
-    public int damage = 2;
+    public float damage;
     public float attackRange = 2f; // ระยะโจมตี
     public float attackCooldown = 1f; // เวลาระหว่างการโจมตีแต่ละครั้ง
 
@@ -30,20 +30,13 @@ public class EnemyBase : MonoBehaviour
             lastAttackTime = Time.time;
         }
     }
-
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("_player"))
         {
-            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(damage * damageMultiplier); // Use the existing damage variable
-            }
+            AttackPlayer();
         }
     }
-
-
     protected void MoveTowardsPlayer()
     {
         if (player == null) return;
@@ -54,12 +47,7 @@ public class EnemyBase : MonoBehaviour
 
     protected virtual void AttackPlayer()
     {
-        // เพิ่มโค้ดสำหรับการทำดาเมจใส่ผู้เล่นที่นี่
-        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>(); // Assuming you have a PlayerHealth script on the player
-        if (playerHealth != null)
-        {
-            playerHealth.TakeDamage(damage * damageMultiplier);
-        }
+        Game._instance.TakeDamage(damage * damageMultiplier);
     }
 
     public void IncreaseDifficulty(int waveNumber)
@@ -80,6 +68,8 @@ public class EnemyBase : MonoBehaviour
 
     protected virtual void Die()
     {
+        Game._instance.GainExperience(10);
+        Coin.Instance.AddCoins(10);
         Destroy(gameObject);
         EnemySpawner.Instance.EnemyDefeated();
     }

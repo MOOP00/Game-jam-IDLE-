@@ -22,11 +22,11 @@ public class PlayerAutoShooting : MonoBehaviour
         weaponSupport = FindObjectOfType<WeaponSupport>();
     }
 
-    private float CalculateDamage(float baseAttackPower, Rarity rarity, int stacklvl)
+    private float CalculateDamage(float baseAttackPower,float WeaponDam,Rarity rarity, int stacklvl)
     {
         float value = CalculateValue(rarity, stacklvl);
         float valueRarity = CalculateValueRarity(rarity, stacklvl);
-        return baseAttackPower * (value + valueRarity * stacklvl);
+        return baseAttackPower + (WeaponDam * (value + (valueRarity * stacklvl)));
     }
 
     float CalculateValue(Rarity rarity, int stacklvl)
@@ -86,7 +86,7 @@ public class PlayerAutoShooting : MonoBehaviour
         if (currentSupportItem != null && currentDataItem.itemData != null)
         {
             // คำนวณความเสียหาย
-            damage = CalculateDamage(Game.Instance.AttackPower, currentSupportItem.rarity, currentDataItem.lvl);
+            damage = CalculateDamage(Game._instance.AttackPower,currentSupportItem.Damgae,currentSupportItem.rarity, currentDataItem.lvl);
             Debug.Log(damage);
         }
         else

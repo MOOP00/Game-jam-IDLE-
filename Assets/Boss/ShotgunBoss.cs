@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class ShotgunBoss : Boss
@@ -18,8 +18,8 @@ public class ShotgunBoss : Boss
     {
         base.Start();
         fireRate = 1.275f;
-        damage = 5;
-        bulletSpeed = 6f;
+        damage = 10;
+        bulletSpeed = 1f;
 
         // Get the Animator component
         animator = GetComponent<Animator>();
@@ -69,7 +69,7 @@ public class ShotgunBoss : Boss
 
     protected override void AttackPlayer()
     {
-        Debug.Log("ShotgunBoss attacks the player!");
+        base.AttackPlayer();
     }
 
     protected override void ShootPlayer()

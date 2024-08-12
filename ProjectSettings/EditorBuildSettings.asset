@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/restart.unity
     guid: d6f99985160f65b4583c135e4c0dc8ea
-  - enabled: 1
+  - enabled: 0
     path: Assets/GameJam/GameJam.unity
     guid: 23361c1ca3e6e2e49ab2821c56959261
   m_configObjects:

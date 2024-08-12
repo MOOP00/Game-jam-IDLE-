@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MeteorBoss : Boss
 {
@@ -11,7 +11,7 @@ public class MeteorBoss : Boss
         fireRate = 8f;
         damage = 50;
         bulletLifetime = 10f;
-        bulletSpeed = 7f;
+        bulletSpeed = 12f;
     }
 
     protected override void Update()
@@ -40,27 +40,31 @@ public class MeteorBoss : Boss
 
     protected override void AttackPlayer()
     {
-        Debug.Log("MeteorBoss attacks the player!");
+        base.AttackPlayer();
     }
 
     protected override void ShootPlayer()
     {
         if (meteorPrefab != null)
         {
-            float spawnHeightAbovePlayer = 10f; // Adjust this value to control how high above the player the meteors spawn
+            float spawnHeightAbovePlayer = 10f; // ปรับค่าเพื่อควบคุมความสูงของการสร้างดาวตก
 
-            for (int i = -1; i <= 1; i++) // Loop to create 3 meteors
+            for (int i = -1; i <= 1; i++) // ลูปเพื่อสร้างดาวตก 3 ลูก
             {
-                // Randomize the spread by adding a random value to the meteorSpread
-                float randomSpread = meteorSpread + Random.Range(-5f, 5f); // Adjust the range to control the randomness
+                // สุ่มระยะการกระจายดาวตก
+                float randomSpread = meteorSpread + Random.Range(-5f, 5f); // ปรับขอบเขตของการสุ่ม
 
                 Vector2 spawnPosition = new Vector2(player.position.x + i * randomSpread, player.position.y + spawnHeightAbovePlayer);
                 GameObject meteor = Instantiate(meteorPrefab, spawnPosition, Quaternion.identity);
                 Rigidbody2D rb = meteor.GetComponent<Rigidbody2D>();
-                rb.linearVelocity = Vector2.down * bulletSpeed * damageMultiplier;
+                if (rb != null)
+                {
+                    rb.velocity = Vector2.down * bulletSpeed; // ใช้ bulletSpeed ที่ลดลง
+                }
 
                 Destroy(meteor, bulletLifetime);
             }
         }
     }
+
 }

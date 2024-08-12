@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class LaserBoss : Boss
@@ -15,14 +15,14 @@ public class LaserBoss : Boss
     {
         base.Start();
         fireRate = 1.5f;
-        damage = 10;
+        damage = 20;
         bulletSpeed = 1f;
         bulletLifetime = 10f;
     }
 
     protected override void AttackPlayer()
     {
-        Debug.Log("LaserBoss attacks the player!");
+        base.AttackPlayer();
     }
 
     protected override void ShootPlayer()

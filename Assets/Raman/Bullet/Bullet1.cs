@@ -7,11 +7,7 @@ public class Bullet1 : MonoBehaviour
         // Check if the bullet collided with the player
         if (collision.CompareTag("_player"))
         {
-            Debug.Log("Bullet hit the player!");
-
-            // Implement damage to the player here, if necessary
-
-            // Destroy the bullet after it hits the player
+            Game._instance.TakeDamage(50);
             Destroy(gameObject);
         }
     }

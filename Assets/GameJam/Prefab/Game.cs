@@ -1,78 +1,125 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
-    public static Game Instance { get; private set; }
-    public int Health;
-    public int MaxHealth;
+    public static Game _instance;
+    public float Health;
+    public float MaxHealth;
     public int AttackPower;
-    public int Defense;
     public int Experience;
     public int Level;
+    private int experienceForNextLevel; // ทำให้เป็น private
+
+    [Header("UI")]
+    public TextMeshProUGUI hp;
+    public TextMeshProUGUI lvl;
+    public TextMeshProUGUI exp;
 
     private void Awake()
     {
-        if (Instance == null)
+        if (_instance == null)
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-            InitializeStats();
+            _instance = this;
         }
         else
         {
             Destroy(gameObject);
         }
     }
+
+    private void Start()
+    {
+        InitializeStats();
+        UpdateUI(); // อัปเดต UI ทั้งหมดเมื่อเริ่มต้น
+    }
+
+    private void UpdateUI()
+    {
+        UpdateHealthUI();
+        UpdateUILevel();
+        UpdateUIExp();
+    }
+
+    private void UpdateHealthUI()
+    {
+        if (hp != null)
+        {
+            hp.text = $"HP: {Health}/{MaxHealth}"; // อัปเดตข้อความให้แสดงค่า HP ปัจจุบัน
+        }
+    }
+
+    private void UpdateUILevel()
+    {
+        if (lvl != null)
+        {
+            lvl.text = $"Level: {Level}"; // อัปเดตข้อความให้แสดงระดับปัจจุบัน
+        }
+    }
+
+    private void UpdateUIExp()
+    {
+        if (exp != null)
+        {
+            exp.text = $"Experience: {Experience}/{experienceForNextLevel}"; // อัปเดตข้อความให้แสดงค่าประสบการณ์ปัจจุบัน
+        }
+    }
+
     private void InitializeStats()
     {
         // กำหนดค่าเริ่มต้นให้กับสถิติของผู้เล่น
-        MaxHealth = 100;
+        MaxHealth = 200;
         Health = MaxHealth;
         AttackPower = 10;
-        Defense = 5;
         Experience = 0;
         Level = 1;
+        experienceForNextLevel = CalculateExperienceForNextLevel();
     }
 
-    // ฟังก์ชันสำหรับการเพิ่มค่าประสบการณ์
+    // คำนวณค่าประสบการณ์ที่จำเป็นสำหรับการเลื่อนระดับ
+    private int CalculateExperienceForNextLevel()
+    {
+        return Level * 100;
+    }
+
+    // เพิ่มค่าประสบการณ์
     public void GainExperience(int amount)
     {
         Experience += amount;
         CheckLevelUp();
+        UpdateUIExp(); // ตรวจสอบว่าเรียกเมธอดนี้หลังจากการเพิ่มประสบการณ์
     }
 
     // ฟังก์ชันสำหรับการตรวจสอบระดับที่เพิ่มขึ้น
     private void CheckLevelUp()
     {
-        // กำหนดค่าประสบการณ์ที่จำเป็นในการเพิ่มระดับ
-        int experienceForNextLevel = Level * 100;
-
-        // ตรวจสอบว่าค่าประสบการณ์เกินกว่าที่กำหนด
-        if (Experience >= experienceForNextLevel)
+        // ตรวจสอบว่าค่าประสบการณ์เกินกว่าที่กำหนดสำหรับระดับถัดไปหรือไม่
+        while (Experience >= experienceForNextLevel)
         {
             Level++;
             Experience -= experienceForNextLevel;
             LevelUp();
         }
+        UpdateUIExp(); // อัปเดต UI ประสบการณ์หลังจากตรวจสอบการเลื่อนระดับ
     }
 
-    // ฟังก์ชันสำหรับการเพิ่มระดับ
+    // จัดการการเลื่อนระดับ
     private void LevelUp()
     {
-        MaxHealth += 20;
+        MaxHealth += 50;
         Health = MaxHealth;
         AttackPower += 5;
-        Defense += 3;
-
-        Debug.Log("Level Up! Current Level: " + Level);
+        experienceForNextLevel = CalculateExperienceForNextLevel(); // อัปเดตค่าประสบการณ์ที่จำเป็นสำหรับระดับถัดไป
+        UpdateUI(); // อัปเดต UI ทั้งหมดหลังจากเลื่อนระดับ
     }
 
-    // ฟังก์ชันสำหรับการลดค่า HP
-    public void TakeDamage(int damage)
+    // ลด HP
+    public void TakeDamage(float damage)
     {
-        int actualDamage = Mathf.Max(damage - Defense, 0); // คำนวณความเสียหายที่ลดลงจาก Defense
-        Health -= actualDamage;
-        Health = Mathf.Max(Health, 0); // ไม่ให้ค่าต่ำกว่า 0
+        Health -= damage;
+        Health = Mathf.Max(Health, 0); // ตรวจสอบให้มั่นใจว่า HP ไม่ต่ำกว่า 0
+        UpdateHealthUI();
 
         if (Health <= 0)
         {
@@ -80,17 +127,23 @@ public class Game : MonoBehaviour
         }
     }
 
-    // ฟังก์ชันสำหรับการรักษา HP
-    public void Heal(int amount)
+    // ฟื้นฟู HP
+    public void Heal(float amount)
     {
         Health += amount;
-        Health = Mathf.Min(Health, MaxHealth); // ไม่ให้ค่าเกิน MaxHealth
+        Health = Mathf.Min(Health, MaxHealth); // ตรวจสอบให้มั่นใจว่า HP ไม่เกิน MaxHealth
+        UpdateHealthUI();
     }
 
-    // ฟังก์ชันเมื่อผู้เล่นตาย
+    // จัดการเมื่อผู้เล่นตาย
     private void Die()
     {
-        Debug.Log("Player Died!");
-        // เพิ่มเติม: ใส่การจัดการเมื่อผู้เล่นตาย เช่น การโหลดฉากใหม่หรือรีเซ็ตเกม
+        RestartGame();
+    }
+
+    // เริ่มเกมใหม่
+    private void RestartGame()
+    {
+        SceneManager.LoadScene(3);
     }
 }

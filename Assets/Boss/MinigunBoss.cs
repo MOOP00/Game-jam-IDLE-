@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 
@@ -23,7 +23,7 @@ public class MinigunBoss : Boss
 
     protected override void AttackPlayer()
     {
-        Debug.Log("MinigunBoss attacks the player!");
+       base.AttackPlayer();
     }
 
     protected override void Update()
