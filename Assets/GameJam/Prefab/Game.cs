@@ -40,7 +40,7 @@ public class Game : MonoBehaviour
     private void InitializeStats()
     {
         // กำหนดค่าเริ่มต้นให้กับสถิติของผู้เล่น
-        MaxHealth = 300;
+        MaxHealth = 200;
         Health = MaxHealth;
         AttackPower = 10;
         Defense = 5;
@@ -78,8 +78,6 @@ public class Game : MonoBehaviour
         AttackPower += 5;
         Defense += 3;
         UpdateHealthUI();
-
-        Debug.Log("Level Up! Current Level: " + Level);
     }
 
     // ฟังก์ชันสำหรับการลดค่า HP
