@@ -150,7 +150,7 @@ public class Chest : MonoBehaviour
             if(Coin.Instance.Coins >= price)
             {
                 Main.gameObject.SetActive(false);
-                Coin.Instance.SpendCoins(price);
+                Coin.Instance.SpendCoins(price * Game._instance.Level);
                 ShowItem();
             }
             else
