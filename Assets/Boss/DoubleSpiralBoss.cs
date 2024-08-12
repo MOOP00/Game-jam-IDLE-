@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class DoubleSpiralBoss : Boss
@@ -20,7 +20,7 @@ public class DoubleSpiralBoss : Boss
         base.Start();
         fireRate = 1.5f; // Adjust fire rate for this boss
         damage = 10; // Set custom damage value for this boss
-        bulletSpeed = 1f;
+        bulletSpeed = 10f;
         bulletLifetime = 10f;
     }
 

@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 
@@ -16,8 +16,8 @@ public class MinigunBoss : Boss
     {
         base.Start();
         fireRate = 0.15f;
-        damage = 10;
-        bulletSpeed = 1f;
+        damage = 2;
+        bulletSpeed = 7f;
         bulletLifetime = 10f;
     }
 

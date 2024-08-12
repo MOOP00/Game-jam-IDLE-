@@ -12,6 +12,7 @@ public class Coin : MonoBehaviour
 
     public TextMeshProUGUI main;
     public TextMeshProUGUI support;
+    public TextMeshProUGUI T;
 
     public TextMeshProUGUI coinText;
     public bool isPaused;
@@ -40,6 +41,10 @@ public class Coin : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             ResumeGame();
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            T.gameObject.SetActive(false);
         }
     }
     public void AddCoins(int amount)

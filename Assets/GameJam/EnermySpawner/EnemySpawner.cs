@@ -86,7 +86,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void BossDefeated()
     {
-        bossesRemainingInWave--;
+        bossesRemainingInWave = Mathf.Max(bossesRemainingInWave - 1, 0);
         UpdateUI();
 
         if (enemiesRemainingInWave <= 0 && bossesRemainingInWave <= 0)
@@ -97,7 +97,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void EnemyDefeated()
     {
-        enemiesRemainingInWave--;
+        enemiesRemainingInWave = Mathf.Max(enemiesRemainingInWave - 1, 0);
         Debug.Log("Enemy defeated. Enemies left: " + enemiesRemainingInWave);
         UpdateUI();
 
@@ -141,7 +141,6 @@ public class EnemySpawner : MonoBehaviour
 
         UpdateUI();
     }
-
 
     private void SpawnBoss()
     {
@@ -190,5 +189,4 @@ public class EnemySpawner : MonoBehaviour
             enemiesLeftText.text = "Enemies Left: " + (enemiesRemainingInWave + bossesRemainingInWave);
         }
     }
-
 }

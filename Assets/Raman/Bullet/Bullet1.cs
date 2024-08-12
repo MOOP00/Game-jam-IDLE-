@@ -7,7 +7,7 @@ public class Bullet1 : MonoBehaviour
         // Check if the bullet collided with the player
         if (collision.CompareTag("_player"))
         {
-            Game._instance.TakeDamage(Game._instance.Level * 30);
+            Game._instance.TakeDamage(50);
             Destroy(gameObject);
         }
     }
