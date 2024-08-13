@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
         float speed = moveDirection.magnitude;
 
         // Set the animator's speed parameter
-        animator.SetFloat("Speed", speed);
+        animator.SetFloat("moveSpeed", speed);
     }
 
     // Flip the player based on the mouse position

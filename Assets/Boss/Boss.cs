@@ -7,12 +7,12 @@ public abstract class Boss : MonoBehaviour
     public float moveSpeed = 1f;
     public float attackRange = 1f;
     public float attackCooldown = 3f;
-    public float shootingRange = 200f;
+    public float shootingRange = 50f;
     public GameObject bulletPrefab;
     public float bulletSpeed = 10f;
     public float bulletLifetime = 5f;
     public float fireRate = 3f;
-    public float health = 100f;
+    public float health = 200f;
     public float waveIncrementHealth = 500 * 1.2f;
     public float damageMultiplier = 1.2f;
     public float damage;

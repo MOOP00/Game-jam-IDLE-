@@ -15,8 +15,8 @@ public class MinigunBoss : Boss
     protected override void Start()
     {
         base.Start();
-        fireRate = 0.15f;
-        damage = 2;
+        fireRate = 0.5f;
+        damage = 1;
         bulletSpeed = 7f;
         bulletLifetime = 10f;
     }
